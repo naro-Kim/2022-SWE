@@ -8,6 +8,6 @@ https://staruml.io/
 
 팀원별 역할 분배
 ---
-조은비 ) Requirement list
-이상욱 ) Actor descriptions
-김아현 ) UI screen design & use case descriptions
+조은비 ) Requirement list  
+이상욱 ) Actor descriptions  
+김아현 ) UI screen design & use case descriptions  
