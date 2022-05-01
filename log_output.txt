@@ -1,0 +1,16 @@
+[naro_Kim] Sun May 1 23:23:55 2022 +0900 최종 보고서 파일 첨부 1ee48b4
+[naro_Kim] Sun May 1 22:55:57 2022 +0900 Create UI_screen_design_use_case_description_b652009.pdf b3b8249
+[naro_Kim] Sun May 1 22:00:47 2022 +0900 각 학생별 업로드 파일 정리 abf627e
+[naro_Kim] Sun May 1 21:58:02 2022 +0900 Update 20220501.mdj b0d0af0
+[eunbypa] Sun May 1 18:27:27 2022 +0900 맡은 요구사항에 대한UI_Design 7dffd73
+[eunbypa] Sun May 1 18:19:06 2022 +0900 Merge branch 'main' of https://github.com/naro-Kim/2022-SWE 793b766
+[eunbypa] Sun May 1 18:15:43 2022 +0900 Use case Description_Final_Version_B811184 c8a7923
+[lsu313] Sun May 1 18:09:51 2022 +0900 usecase description 최종 1ef1b77
+[lsu313] Sun May 1 17:53:37 2022 +0900 20220501 69a437b
+[naro_Kim] Sat Apr 30 22:21:47 2022 +0900 Update README.md 0cb983b
+[naro_Kim] Sat Apr 30 22:15:48 2022 +0900 Update README.md e023765
+[naro_Kim] Thu Apr 28 18:39:03 2022 +0900 Add files via upload f7167fd
+[naro_Kim] Thu Apr 28 18:37:53 2022 +0900 Add files via upload 48e0aba
+[naro_Kim] Sun Apr 24 17:28:02 2022 +0900 Update README.md fcef88e
+[naro_Kim] Sun Apr 24 17:27:44 2022 +0900 Update README.md 465d78e
+[naro_Kim] Sun Apr 24 17:01:44 2022 +0900 Initial commit a7a09c9
