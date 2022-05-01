@@ -9,7 +9,7 @@ https://staruml.io/
 Use Case Diagram과 역할분배
 ---
 ![UseCaseDiagram_final](https://user-images.githubusercontent.com/51940808/166151241-182f4f7a-23ac-4bac-bb4b-031cd72a8331.png)  
-![UseCaseDiagram_학생별역할](https://user-images.githubusercontent.com/51940808/166151251-fd73eccc-d3b3-45f1-9d82-5138a1802ca8.png)  
+![UseCaseDiagram_학생별역할](https://user-images.githubusercontent.com/51940808/166151599-708e757f-376e-4ee3-a6ae-cbc3d829dd95.png)  
 
 
 팀원별로 use case diagram, description 및 UI화면 작성을 위한 Use case를 크게 다음과 같이 분배하였습니다.  
