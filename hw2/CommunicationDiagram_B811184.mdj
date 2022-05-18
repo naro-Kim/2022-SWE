@@ -7930,9 +7930,9 @@
 												"$ref": "AAAAAAGAt+Au30GF4I4="
 											},
 											"font": "Arial;13;0",
-											"left": 24.45703125,
+											"left": 40.72998046875,
 											"top": 13,
-											"width": 141.11181640625,
+											"width": 133.97705078125,
 											"height": 13,
 											"text": "See bought product list"
 										},
@@ -7943,14 +7943,15 @@
 												"$ref": "AAAAAAGAt+Au30GF4I4="
 											},
 											"font": "Arial;13;1",
-											"left": 5,
+											"left": 21,
 											"top": 13,
-											"width": 14.45703125,
+											"width": 14.72998046875,
 											"height": 13,
 											"text": "sd"
 										}
 									],
 									"font": "Arial;13;0",
+									"left": 16,
 									"top": 8,
 									"width": 873,
 									"height": 592,
@@ -10230,13 +10231,13 @@
 												"$ref": "AAAAAAGAz783zHbgvUQ="
 											},
 											"font": "Arial;13;0",
-											"left": 327.6484375,
+											"left": 325.17919921875,
 											"top": 380.5,
-											"width": 175.703125,
+											"width": 180.6416015625,
 											"height": 13,
 											"alpha": -0.6747407796219597,
 											"distance": 38.41874542459709,
-											"text": "2.1.2 : GetProductInfoDetails()"
+											"text": "2.1.2* : GetProductInfoDetails()"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -10410,7 +10411,7 @@
 							"connector": {
 								"$ref": "AAAAAAGAz783y3bSbjQ="
 							},
-							"sequenceNumber": "2.1.2"
+							"sequenceNumber": "2.1.2*"
 						}
 					],
 					"participants": [
@@ -10735,9 +10736,9 @@
 												"$ref": "AAAAAAGAt/Y7IGaULMQ="
 											},
 											"font": "Arial;13;0",
-											"left": 24.72998046875,
+											"left": 24.45703125,
 											"top": 13,
-											"width": 144.80615234375,
+											"width": 145.9423828125,
 											"height": 13,
 											"text": "Evaluate buy satisfaction"
 										},
@@ -10750,7 +10751,7 @@
 											"font": "Arial;13;1",
 											"left": 5,
 											"top": 13,
-											"width": 14.72998046875,
+											"width": 14.45703125,
 											"height": 13,
 											"text": "sd"
 										}
