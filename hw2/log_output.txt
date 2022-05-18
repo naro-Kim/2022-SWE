@@ -1,3 +1,5 @@
+[naro_Kim] Wed May 18 17:52:21 2022 +0900 Create log_output.txt 43a878e
+[naro_Kim] Wed May 18 17:52:04 2022 +0900 Create log_output.txt c371c7e
 [eunbypa] Wed May 18 16:45:42 2022 +0900 오타 수정 2ffeb19
 [eunbypa] Wed May 18 16:40:13 2022 +0900 Class Diagram 통합ver 8254b02
 [eunbypa] Wed May 18 16:27:03 2022 +0900 communication diagram 및 합친 class diagram 일부분 수정 d666d06
