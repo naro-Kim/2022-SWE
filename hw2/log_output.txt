@@ -1,0 +1,39 @@
+[eunbypa] Wed May 18 16:45:42 2022 +0900 오타 수정 2ffeb19
+[eunbypa] Wed May 18 16:40:13 2022 +0900 Class Diagram 통합ver 8254b02
+[eunbypa] Wed May 18 16:27:03 2022 +0900 communication diagram 및 합친 class diagram 일부분 수정 d666d06
+[lsu313] Wed May 18 02:48:01 2022 +0900 class diagram 통합초안 89d264e
+[naro-Kim] Tue May 17 21:06:30 2022 +0900 Update CommunicationDiagram_B652009.mdj 38ab805
+[naro-Kim] Tue May 17 19:59:53 2022 +0900 Merge branch 'main' of https://github.com/naro-Kim/2022-SWE ea286bc
+[naro-Kim] Tue May 17 19:59:49 2022 +0900 Update CommunicationDiagram_B652009.mdj b5275c0
+[lsu313] Tue May 17 19:46:53 2022 +0900 class diagram초안 393e440
+[eunbypa] Tue May 17 18:10:10 2022 +0900 수정된 communication diagram&class diagram 초안 542f2c9
+[naro-Kim] Tue May 17 17:31:50 2022 +0900 Update CommunicationDiagram_B652009.mdj 707b5e1
+[lsu313] Tue May 17 02:50:13 2022 +0900 수정 00645ca
+[naro_Kim] Mon May 16 20:26:16 2022 +0900 Merge branch 'main' of https://github.com/naro-Kim/2022-SWE 24f7464
+[naro_Kim] Mon May 16 20:25:56 2022 +0900 communication & class 초안 90cf8cb
+[lsu313] Sun May 15 03:18:43 2022 +0900 초안수정 64351a0
+[eunbypa] Sat May 14 13:48:10 2022 +0900 interaction 순서부분 변경 4435a0a
+[naro_Kim] Sat May 14 13:17:36 2022 +0900 hw2 초안, 회원가입 단계 4024f08
+[eunbypa] Sat May 14 10:07:50 2022 +0900 맡은 요구사항에 대한 커뮤니테이션 다이어그램 초안 7eca168
+[naro-Kim] Thu May 12 10:50:52 2022 +0900 Update hw2 files 6b269ca
+[eunbypa] Mon May 2 00:47:53 2022 +0900 2조 소프트웨어 공학 과제1 최종 보고서 b6fcc9c
+[naro_Kim] Mon May 2 00:00:49 2022 +0900 Merge branch 'main' of https://github.com/naro-Kim/2022-SWE ef7f0ed
+[naro_Kim] Sun May 1 23:59:02 2022 +0900 5월 1일 기준 최종 파일 b20127c
+[naro_Kim] Sun May 1 23:58:43 2022 +0900 Update README.md 238e8f3
+[naro_Kim] Sun May 1 23:51:21 2022 +0900 Update README.md 3348a98
+[naro_Kim] Sun May 1 23:23:55 2022 +0900 최종 보고서 파일 첨부 1ee48b4
+[naro_Kim] Sun May 1 22:55:57 2022 +0900 Create UI_screen_design_use_case_description_b652009.pdf b3b8249
+[naro_Kim] Sun May 1 22:00:47 2022 +0900 각 학생별 업로드 파일 정리 abf627e
+[naro_Kim] Sun May 1 21:58:02 2022 +0900 Update 20220501.mdj b0d0af0
+[eunbypa] Sun May 1 18:27:27 2022 +0900 맡은 요구사항에 대한UI_Design 7dffd73
+[eunbypa] Sun May 1 18:19:06 2022 +0900 Merge branch 'main' of https://github.com/naro-Kim/2022-SWE 793b766
+[eunbypa] Sun May 1 18:15:43 2022 +0900 Use case Description_Final_Version_B811184 c8a7923
+[lsu313] Sun May 1 18:09:51 2022 +0900 usecase description 최종 1ef1b77
+[lsu313] Sun May 1 17:53:37 2022 +0900 20220501 69a437b
+[naro_Kim] Sat Apr 30 22:21:47 2022 +0900 Update README.md 0cb983b
+[naro_Kim] Sat Apr 30 22:15:48 2022 +0900 Update README.md e023765
+[naro_Kim] Thu Apr 28 18:39:03 2022 +0900 Add files via upload f7167fd
+[naro_Kim] Thu Apr 28 18:37:53 2022 +0900 Add files via upload 48e0aba
+[naro_Kim] Sun Apr 24 17:28:02 2022 +0900 Update README.md fcef88e
+[naro_Kim] Sun Apr 24 17:27:44 2022 +0900 Update README.md 465d78e
+[naro_Kim] Sun Apr 24 17:01:44 2022 +0900 Initial commit a7a09c9
