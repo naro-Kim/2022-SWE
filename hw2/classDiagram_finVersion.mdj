@@ -63,9 +63,9 @@
 												"$ref": "AAAAAAGAwF8jaqloBzY="
 											},
 											"font": "Arial;13;0",
-											"left": 24.72998046875,
+											"left": 24.45703125,
 											"top": 13,
-											"width": 147.6943359375,
+											"width": 151.43310546875,
 											"height": 13,
 											"text": "check on sale productList"
 										},
@@ -78,7 +78,7 @@
 											"font": "Arial;13;1",
 											"left": 5,
 											"top": 13,
-											"width": 14.72998046875,
+											"width": 14.45703125,
 											"height": 13,
 											"text": "sd"
 										}
@@ -3361,9 +3361,9 @@
 												"$ref": "AAAAAAGAwHTBMepXNEU="
 											},
 											"font": "Arial;13;0",
-											"left": 48.72998046875,
+											"left": 48.45703125,
 											"top": 5,
-											"width": 134.68798828125,
+											"width": 141.40380859375,
 											"height": 13,
 											"text": "check  sold productInfo"
 										},
@@ -3376,7 +3376,7 @@
 											"font": "Arial;13;1",
 											"left": 29,
 											"top": 5,
-											"width": 14.72998046875,
+											"width": 14.45703125,
 											"height": 13,
 											"text": "sd"
 										}
@@ -5007,9 +5007,9 @@
 												"$ref": "AAAAAAGAwMwITlTr63I="
 											},
 											"font": "Arial;13;0",
-											"left": 663.17919921875,
+											"left": 662.88720703125,
 											"top": 242,
-											"width": 180.6416015625,
+											"width": 181.2255859375,
 											"height": 13,
 											"alpha": 0.1053774291313408,
 											"distance": 104.58011283222064,
@@ -5929,9 +5929,9 @@
 												"$ref": "AAAAAAGAwIrDdgAMyfU="
 											},
 											"font": "Arial;13;0",
-											"left": 32.72998046875,
+											"left": 32.45703125,
 											"top": 5,
-											"width": 115.1435546875,
+											"width": 115.1689453125,
 											"height": 13,
 											"text": "Print sales statistics"
 										},
@@ -5944,7 +5944,7 @@
 											"font": "Arial;13;1",
 											"left": 13,
 											"top": 5,
-											"width": 14.72998046875,
+											"width": 14.45703125,
 											"height": 13,
 											"text": "sd"
 										}
@@ -8901,9 +8901,9 @@
 												"$ref": "AAAAAAGAwKE2bRdYpeQ="
 											},
 											"font": "Arial;13;0",
-											"left": 32.72998046875,
+											"left": 32.45703125,
 											"top": 5,
-											"width": 215.60791015625,
+											"width": 221.27001953125,
 											"height": 13,
 											"text": "register a new sales clothes to a user"
 										},
@@ -8916,7 +8916,7 @@
 											"font": "Arial;13;1",
 											"left": 13,
 											"top": 5,
-											"width": 14.72998046875,
+											"width": 14.45703125,
 											"height": 13,
 											"text": "sd"
 										}
@@ -17621,7 +17621,7 @@
 											"top": 1815,
 											"width": 215.46484375,
 											"height": 13,
-											"text": "+AverageBuySatisfaction",
+											"text": "+BuySatisfaction",
 											"horizontalAlignment": 0
 										},
 										{
@@ -17753,12 +17753,30 @@
 											"model": {
 												"$ref": "AAAAAAGA0wEW+zOSXt0="
 											},
+											"visible": false,
 											"font": "Arial;13;0",
 											"left": 525,
 											"top": 1913,
 											"width": 215.46484375,
 											"height": 13,
 											"text": "+CalculateAvearageBuySatisfaction()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGA1gLmyhWRTUk=",
+											"_parent": {
+												"$ref": "AAAAAAGA0ZMsenKUGRY="
+											},
+											"model": {
+												"$ref": "AAAAAAGA1gLmshWOH4I="
+											},
+											"font": "Arial;13;0",
+											"left": 525,
+											"top": 1913,
+											"width": 215.46484375,
+											"height": 13,
+											"text": "+AddBuySatisfaction()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -18101,19 +18119,6 @@
 							}
 						},
 						{
-							"_type": "UMLTextBoxView",
-							"_id": "AAAAAAGA0wFLSjQyolg=",
-							"_parent": {
-								"$ref": "AAAAAAGA0Y+HNW+jJvc="
-							},
-							"font": "Arial;13;0",
-							"left": 352,
-							"top": 1960,
-							"width": 184,
-							"height": 120,
-							"text": "평균구매만족도 애매"
-						},
-						{
 							"_type": "UMLClassView",
 							"_id": "AAAAAAGA0wIPwjhanfE=",
 							"_parent": {
@@ -18169,7 +18174,7 @@
 											"font": "Arial;13;0",
 											"left": 208,
 											"top": 2448,
-											"width": 80.9072265625,
+											"width": 85.0966796875,
 											"height": 13,
 											"text": "(from Model6)"
 										},
@@ -18346,9 +18351,9 @@
 										"$ref": "AAAAAAGA0wMnmjs6Kvk="
 									},
 									"font": "Arial;13;0",
-									"left": 821,
+									"left": 820,
 									"top": 1795,
-									"width": 28.5517578125,
+									"width": 30.8369140625,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -23060,19 +23065,6 @@
 							"propertyLabel": {
 								"$ref": "AAAAAAGA0w9dn78mP2k="
 							}
-						},
-						{
-							"_type": "UMLTextBoxView",
-							"_id": "AAAAAAGA0xfYnhq6WUI=",
-							"_parent": {
-								"$ref": "AAAAAAGA0Y+HNW+jJvc="
-							},
-							"font": "Arial;13;0",
-							"left": 224,
-							"top": 1600,
-							"width": 176,
-							"height": 96,
-							"text": "ListSellProducts() -> 판매자의 판매중인 상품리스트 조회라고 생각하여 기존의 listprdouct_OnSale()로 통합"
 						}
 					]
 				},
@@ -23277,7 +23269,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGA0ZMseXKLqto="
 							},
-							"name": "ProductName"
+							"name": "ProductName",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -23285,7 +23278,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGA0ZMseXKLqto="
 							},
-							"name": "ProductCompanyName"
+							"name": "ProductCompanyName",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -23293,7 +23287,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGA0ZMseXKLqto="
 							},
-							"name": "Price"
+							"name": "Price",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -23301,7 +23296,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGA0ZMseXKLqto="
 							},
-							"name": "StockNum"
+							"name": "StockNum",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -23309,7 +23305,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGA0ZMseXKLqto="
 							},
-							"name": "AverageBuySatisfaction"
+							"name": "BuySatisfaction",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -23369,6 +23366,14 @@
 								"$ref": "AAAAAAGA0ZMseXKLqto="
 							},
 							"name": "CalculateAvearageBuySatisfaction"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGA1gLmshWOH4I=",
+							"_parent": {
+								"$ref": "AAAAAAGA0ZMseXKLqto="
+							},
+							"name": "AddBuySatisfaction"
 						}
 					]
 				},
@@ -26932,9 +26937,9 @@
 														"$ref": "AAAAAAGA0wtTpHTruAE="
 													},
 													"font": "Arial;13;0",
-													"left": 104.72998046875,
+													"left": 104.45703125,
 													"top": 5,
-													"width": 90.603515625,
+													"width": 91.4287109375,
 													"height": 13,
 													"text": "Create Account"
 												},
@@ -26947,7 +26952,7 @@
 													"font": "Arial;13;1",
 													"left": 85,
 													"top": 5,
-													"width": 14.72998046875,
+													"width": 14.45703125,
 													"height": 13,
 													"text": "sd"
 												}
@@ -27217,7 +27222,7 @@
 																"$ref": "AAAAAAGA0wtTpHT8SzQ="
 															},
 															"visible": false,
-															"font": "Arial;11.700000000000001;0",
+															"font": "Arial;13;0",
 															"left": -556,
 															"top": -520,
 															"width": 110.24609375,
@@ -29766,7 +29771,8 @@
 										}
 									}
 								}
-							]
+							],
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -29814,7 +29820,8 @@
 										}
 									}
 								}
-							]
+							],
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -30043,9 +30050,9 @@
 														"$ref": "AAAAAAGA0wtTpnWjQIY="
 													},
 													"font": "Arial;13;0",
-													"left": 168.72998046875,
+													"left": 168.45703125,
 													"top": 149,
-													"width": 32.80810546875,
+													"width": 33.56982421875,
 													"height": 13,
 													"text": "Login"
 												},
@@ -30058,7 +30065,7 @@
 													"font": "Arial;13;1",
 													"left": 149,
 													"top": 149,
-													"width": 14.72998046875,
+													"width": 14.45703125,
 													"height": 13,
 													"text": "sd"
 												}
@@ -31068,7 +31075,7 @@
 																"$ref": "AAAAAAGA0wtTp3XWfKI="
 															},
 															"visible": false,
-															"font": "Arial;11.700000000000001;0",
+															"font": "Arial;13;0",
 															"left": -174,
 															"top": -270,
 															"width": 110.24609375,
@@ -32207,7 +32214,8 @@
 										}
 									}
 								}
-							]
+							],
+							"type": ""
 						}
 					]
 				},
@@ -32252,9 +32260,9 @@
 														"$ref": "AAAAAAGA0wtTqXYju5I="
 													},
 													"font": "Arial;13;0",
-													"left": 32.72998046875,
+													"left": 32.45703125,
 													"top": 13,
-													"width": 43.6435546875,
+													"width": 44.90673828125,
 													"height": 13,
 													"text": "LogOut"
 												},
@@ -32267,7 +32275,7 @@
 													"font": "Arial;13;1",
 													"left": 13,
 													"top": 13,
-													"width": 14.72998046875,
+													"width": 14.45703125,
 													"height": 13,
 													"text": "sd"
 												}
@@ -32336,7 +32344,7 @@
 																"$ref": "AAAAAAGA0wtTqXYoWVI="
 															},
 															"visible": false,
-															"font": "Arial;11.700000000000001;0",
+															"font": "Arial;13;0",
 															"left": -498,
 															"top": -228,
 															"width": 110.24609375,
@@ -34377,7 +34385,8 @@
 										}
 									}
 								}
-							]
+							],
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -34561,9 +34570,9 @@
 														"$ref": "AAAAAAGA0wtTqnafULA="
 													},
 													"font": "Arial;13;0",
-													"left": 48.72998046875,
+													"left": 48.45703125,
 													"top": 13,
-													"width": 85.55078125,
+													"width": 86.91552734375,
 													"height": 13,
 													"text": "DeleteAccount"
 												},
@@ -34576,7 +34585,7 @@
 													"font": "Arial;13;1",
 													"left": 29,
 													"top": 13,
-													"width": 14.72998046875,
+													"width": 14.45703125,
 													"height": 13,
 													"text": "sd"
 												}
@@ -34645,7 +34654,7 @@
 																"$ref": "AAAAAAGA0wtTqnak8Bg="
 															},
 															"visible": false,
-															"font": "Arial;11.700000000000001;0",
+															"font": "Arial;13;0",
 															"left": -294,
 															"top": -34,
 															"width": 110.24609375,
@@ -37133,7 +37142,8 @@
 										}
 									}
 								}
-							]
+							],
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
