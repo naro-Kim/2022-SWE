@@ -142,7 +142,9 @@ public:
 	LogOut(AccountDB* accountDB, Account *loginPointer);
 	void requestLogOut();
 };
-
+//Class : 판매조회 컨트롤 클래스
+//Description : 판매조회 바운더리 클래스를 생성한다.
+//Author : 이상욱
 class CheckPrdouctListOnSale {
 private:
 	Seller* seller;
@@ -151,7 +153,9 @@ public:
 	vector<Product*> ShowProductlist();
 
 };
-
+//Class : 판매조회 바운더리 클래스
+//Description : 고객의 입출력 파일을 입력 & 출력 기능을 하는 클래스이다.
+//Author : 이상욱
 class CheckPrdouctListOnSaleUI {
 private:
 	CheckPrdouctListOnSale* checkPrdouctListOnSale;
@@ -162,7 +166,9 @@ public:
 	//void checkProudctListOnSale(); //판매자가 조회버튼을 눌렀을때 작동하는 함수. 이번 시스템에서는 정보를 받는 함수
 	void outputList();
 };
-
+//Class : 판매완료조회 컨트롤 클래스
+//Description : 판매완료조회 바운더리 클래스를 생성한다.
+//Author : 이상욱
 class CheckPrdouctInfoSold {
 private:
 	Seller* seller;
@@ -170,7 +176,9 @@ public:
 	CheckPrdouctInfoSold(Seller* seller);
 	vector<Product*> showProductInfo();
 };
-
+//Class : 판매완료조회 바운더리 클래스
+//Description : 고객의 입출력 파일을 입력 & 출력 기능을 하는 클래스이다.
+//Author : 이상욱
 class CheckPrdouctInfoSoldUI {
 private:
 	vector<Product*> list;
@@ -181,15 +189,21 @@ public:
 	void outputList();
 	//void checkProudctInfoSold(); //판매자가 조회버튼을 눌렀을때 작동하는 함수. 이번 시스템에서는 정보를 받는 함수
 };
+//Class : 판매통계 컨트롤 클래스
+//Description : 판매통계기능에 관한 컨트롤을 담당하는 클래스이다.
+//Author : 이상욱
 class PrintStatistics {
 private:
 	Seller* seller;
-	int totalProfit;	//총 판매금액
-	int averageBuySatisfaction; //평균구매만족도
 public:
 	PrintStatistics(Seller* seller);
+	int getAverageBuySatisfaction(int i);
+	int getTotalProfit(int i);
 	vector<Product*> printStatisticsinfo();
 };
+//Class : 판매통계 바운더리 클래스
+//Description : 고객의 입출력 파일을 입력 & 출력 기능을 하는 클래스이다..
+//Author : 이상욱
 class PrintStatisticsUI {
 private:
 	vector<Product*> list;
@@ -200,6 +214,9 @@ public:
 	void outputList();
 	//void printStatistics();
 };
+//Class : 판매의류등록 컨트롤 클래스
+//Description : 판매의류등록에 관한 컨트롤 클래스이다.
+//Author : 이상욱
 class AddClothes {
 private:
 	Seller* seller;
@@ -207,6 +224,9 @@ public:
 	AddClothes(Seller* seller);
 	void addNewClothes(string productName, string productCompanyName, int price, int stockNum);
 };
+//Class : 판매의류등록 바운더리 클래스
+//Description : 고객의 입출력 파일을 입력 & 출력 기능을 하는 클래스이다..
+//Author : 이상욱
 class AddClothesUI {
 public:
 	AddClothesUI(AddClothes* addClothes, Seller* seller);
@@ -371,6 +391,8 @@ public:
 //Class : 상품 집합
 //Description : 상품 엔티티의 집합 클래스이다.
 //Author : 조은비
+//revision: 이상욱
+//what: 오퍼레이션 추가 vector<Product*> getProductlist();
 class ProductCollection {
 	vector<Product*> product;
 	//Product* product[MAX_VALUE];
@@ -384,16 +406,17 @@ public:
 //Class : 판매자 엔티티 
 //Description : 회원 엔티티 클래스를 부모로 하는 판매자 클래스이다. 판매자가 판매중인 목록, 판매 완료된 목록을 가지고 있다.
 //Author : 조은비
+//Revision: 이상욱
+// what: 오퍼레이션 추가 listProductStatistics()
 class Seller : public Account {
-	//ProductCollection onSaleProductCollection;
-	//ProductCollection onSoldProductCollection;
 	ProductCollection product;
 public:
 	Seller(string name, string ssn, string ID, string password);
 	//void reSet();
 	void addNewClothes(string productName, string productCompanyName, int price, int stockNum);
-	vector<Product*> listProduct_OnSale();
-	vector<Product*> listProduct_OnSold();
+	vector<Product*> listProductOnSale();
+	vector<Product*> listProductOnSold();
+	vector<Product*> listProductStatistics();
 	string getSellerID();
 };
 
@@ -411,6 +434,9 @@ public:
 //Class : 상품 엔티티
 //Description : 상품에 대한 정보인 상품명, 상품회사명, 가격, 재고, 평가받은 구매만족도 리스트를 가지고 있다.
 //Author : 조은비
+// revision: 이상욱
+//what: 현재재고량과 구분되기 위한 본래 재고량을 의미하는 변수 originalStockNum와 그 값을 얻을 수 있는
+// public operation인 getOriginalStockNum() 추가
 class Product {
 	string productName;
 	string productCompanyName;
