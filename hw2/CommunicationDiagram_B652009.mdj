@@ -69,9 +69,9 @@
 																"$ref": "AAAAAAGAwLgzGB7nQzY="
 															},
 															"font": "Arial;13;0",
-															"left": 104.72998046875,
-															"top": 5,
-															"width": 90.603515625,
+															"left": 128.45703125,
+															"top": 61,
+															"width": 91.4287109375,
 															"height": 13,
 															"text": "Create Account"
 														},
@@ -82,17 +82,18 @@
 																"$ref": "AAAAAAGAwLgzGB7nQzY="
 															},
 															"font": "Arial;13;1",
-															"left": 85,
-															"top": 5,
-															"width": 14.72998046875,
+															"left": 109,
+															"top": 61,
+															"width": 14.45703125,
 															"height": 13,
 															"text": "sd"
 														}
 													],
 													"font": "Arial;13;0",
-													"left": 80,
-													"width": 1009,
-													"height": 697,
+													"left": 104,
+													"top": 56,
+													"width": 881,
+													"height": 417,
 													"nameLabel": {
 														"$ref": "AAAAAAGAwLgzGB7oLB0="
 													},
@@ -979,13 +980,13 @@
 																"$ref": "AAAAAAGAyyJ4UlEtjaI="
 															},
 															"font": "Arial;13;0",
-															"left": 530.583251953125,
+															"left": 524.851318359375,
 															"top": 136,
-															"width": 135.83349609375,
+															"width": 147.29736328125,
 															"height": 13,
 															"alpha": 1.325817075432825,
 															"distance": 16.492422502470642,
-															"text": "2.1 : createAccount()"
+															"text": "2.1 : createNewAccount()"
 														},
 														{
 															"_type": "NodeLabelView",
@@ -1304,7 +1305,7 @@
 															"height": 13,
 															"alpha": -4.0266600140331015,
 															"distance": 14.212670403551895,
-															"text": "2 :  createAccount()"
+															"text": "2 : enterAccountInfo()"
 														},
 														{
 															"_type": "NodeLabelView",
@@ -1724,7 +1725,7 @@
 															"height": 13,
 															"alpha": 0.031239830178236092,
 															"distance": 96.04686356149273,
-															"text": "2.1.1 :  addNewAccount()"
+															"text": "2.1.1 : checkAccount()"
 														},
 														{
 															"_type": "NodeLabelView",
@@ -1792,7 +1793,7 @@
 													"top": 256,
 													"width": 161,
 													"height": 38,
-													"text": "2.2 : storeAccountInfo()"
+													"text": "2.2 : createAccount()"
 												},
 												{
 													"_type": "UMLCommLifelineView",
@@ -2393,7 +2394,7 @@
 															"height": 13,
 															"alpha": -0.021502059674894273,
 															"distance": 93.02150289046077,
-															"text": "2.1.1.1 : Account()"
+															"text": "2.3 : Account()"
 														},
 														{
 															"_type": "NodeLabelView",
@@ -2487,7 +2488,7 @@
 											"_parent": {
 												"$ref": "AAAAAAGAwLgzGB7lYSQ="
 											},
-											"name": " createAccount()",
+											"name": "enterAccountInfo()",
 											"source": {
 												"$ref": "AAAAAAGAwPVkBQWB+fU="
 											},
@@ -2505,7 +2506,7 @@
 											"_parent": {
 												"$ref": "AAAAAAGAwLgzGB7lYSQ="
 											},
-											"name": "createAccount()",
+											"name": "createNewAccount()",
 											"source": {
 												"$ref": "AAAAAAGAwLvbVh89adE="
 											},
@@ -2523,7 +2524,7 @@
 											"_parent": {
 												"$ref": "AAAAAAGAwLgzGB7lYSQ="
 											},
-											"name": " addNewAccount()",
+											"name": "checkAccount()",
 											"source": {
 												"$ref": "AAAAAAGAwL8ViyTk10E="
 											},
@@ -2551,7 +2552,7 @@
 											"connector": {
 												"$ref": "AAAAAAGAzH3EiAaQybw="
 											},
-											"sequenceNumber": "2.1.1.1"
+											"sequenceNumber": "2.3"
 										}
 									],
 									"participants": [
@@ -4912,6 +4913,242 @@
 													"height": 25,
 													"text": "2.3 : logIn()",
 													"vertAlign": 4
+												},
+												{
+													"_type": "UMLConnectorView",
+													"_id": "AAAAAAGBIqB2y63V7kw=",
+													"_parent": {
+														"$ref": "AAAAAAGAwMJLuSvZ+UY="
+													},
+													"model": {
+														"$ref": "AAAAAAGBIqB2yq3SGQw="
+													},
+													"subViews": [
+														{
+															"_type": "EdgeLabelView",
+															"_id": "AAAAAAGBIqB2y63WGJk=",
+															"_parent": {
+																"$ref": "AAAAAAGBIqB2y63V7kw="
+															},
+															"model": {
+																"$ref": "AAAAAAGBIqB2yq3SGQw="
+															},
+															"visible": false,
+															"font": "Arial;13;0",
+															"left": 668,
+															"top": 229,
+															"height": 13,
+															"alpha": 1.5707963267948966,
+															"distance": 15,
+															"hostEdge": {
+																"$ref": "AAAAAAGBIqB2y63V7kw="
+															},
+															"edgePosition": 1
+														},
+														{
+															"_type": "EdgeLabelView",
+															"_id": "AAAAAAGBIqB2y63XYmU=",
+															"_parent": {
+																"$ref": "AAAAAAGBIqB2y63V7kw="
+															},
+															"model": {
+																"$ref": "AAAAAAGBIqB2yq3SGQw="
+															},
+															"visible": null,
+															"font": "Arial;13;0",
+															"left": 683,
+															"top": 229,
+															"height": 13,
+															"alpha": 1.5707963267948966,
+															"distance": 30,
+															"hostEdge": {
+																"$ref": "AAAAAAGBIqB2y63V7kw="
+															},
+															"edgePosition": 1
+														},
+														{
+															"_type": "EdgeLabelView",
+															"_id": "AAAAAAGBIqB2y63Yu40=",
+															"_parent": {
+																"$ref": "AAAAAAGBIqB2y63V7kw="
+															},
+															"model": {
+																"$ref": "AAAAAAGBIqB2yq3SGQw="
+															},
+															"visible": false,
+															"font": "Arial;13;0",
+															"left": 639,
+															"top": 230,
+															"height": 13,
+															"alpha": -1.5707963267948966,
+															"distance": 15,
+															"hostEdge": {
+																"$ref": "AAAAAAGBIqB2y63V7kw="
+															},
+															"edgePosition": 1
+														},
+														{
+															"_type": "EdgeLabelView",
+															"_id": "AAAAAAGBIqB2y63Zcis=",
+															"_parent": {
+																"$ref": "AAAAAAGBIqB2y63V7kw="
+															},
+															"model": {
+																"$ref": "AAAAAAGBIqB2y63TcOM="
+															},
+															"visible": false,
+															"font": "Arial;13;0",
+															"left": 545,
+															"top": 225,
+															"height": 13,
+															"alpha": 0.5235987755982988,
+															"distance": 30,
+															"hostEdge": {
+																"$ref": "AAAAAAGBIqB2y63V7kw="
+															},
+															"edgePosition": 2
+														},
+														{
+															"_type": "EdgeLabelView",
+															"_id": "AAAAAAGBIqB2y63a3o0=",
+															"_parent": {
+																"$ref": "AAAAAAGBIqB2y63V7kw="
+															},
+															"model": {
+																"$ref": "AAAAAAGBIqB2y63TcOM="
+															},
+															"visible": false,
+															"font": "Arial;13;0",
+															"left": 531,
+															"top": 222,
+															"height": 13,
+															"alpha": 0.7853981633974483,
+															"distance": 40,
+															"hostEdge": {
+																"$ref": "AAAAAAGBIqB2y63V7kw="
+															},
+															"edgePosition": 2
+														},
+														{
+															"_type": "EdgeLabelView",
+															"_id": "AAAAAAGBIqB2y63biTs=",
+															"_parent": {
+																"$ref": "AAAAAAGBIqB2y63V7kw="
+															},
+															"model": {
+																"$ref": "AAAAAAGBIqB2y63TcOM="
+															},
+															"visible": false,
+															"font": "Arial;13;0",
+															"left": 572,
+															"top": 229,
+															"height": 13,
+															"alpha": -0.5235987755982988,
+															"distance": 25,
+															"hostEdge": {
+																"$ref": "AAAAAAGBIqB2y63V7kw="
+															},
+															"edgePosition": 2
+														},
+														{
+															"_type": "EdgeLabelView",
+															"_id": "AAAAAAGBIqB2y63caMQ=",
+															"_parent": {
+																"$ref": "AAAAAAGBIqB2y63V7kw="
+															},
+															"model": {
+																"$ref": "AAAAAAGBIqB2y63UuKg="
+															},
+															"font": "Arial;13;0",
+															"left": 622,
+															"top": 208,
+															"width": 52.39990234375,
+															"height": 13,
+															"alpha": 1.1722737321088779,
+															"distance": 61.84658438426491,
+															"hostEdge": {
+																"$ref": "AAAAAAGBIqB2y63V7kw="
+															},
+															"text": "+LoginUI"
+														},
+														{
+															"_type": "EdgeLabelView",
+															"_id": "AAAAAAGBIqB2y63dFJY=",
+															"_parent": {
+																"$ref": "AAAAAAGBIqB2y63V7kw="
+															},
+															"model": {
+																"$ref": "AAAAAAGBIqB2y63UuKg="
+															},
+															"visible": false,
+															"font": "Arial;13;0",
+															"left": 652,
+															"top": 293,
+															"height": 13,
+															"alpha": -0.7853981633974483,
+															"distance": 40,
+															"hostEdge": {
+																"$ref": "AAAAAAGBIqB2y63V7kw="
+															}
+														},
+														{
+															"_type": "EdgeLabelView",
+															"_id": "AAAAAAGBIqB2y63eXQ4=",
+															"_parent": {
+																"$ref": "AAAAAAGBIqB2y63V7kw="
+															},
+															"model": {
+																"$ref": "AAAAAAGBIqB2y63UuKg="
+															},
+															"visible": false,
+															"font": "Arial;13;0",
+															"left": 645,
+															"top": 252,
+															"height": 13,
+															"alpha": 0.5235987755982988,
+															"distance": 25,
+															"hostEdge": {
+																"$ref": "AAAAAAGBIqB2y63V7kw="
+															}
+														}
+													],
+													"font": "Arial;13;0",
+													"head": {
+														"$ref": "AAAAAAGAwM4f7VQlreE="
+													},
+													"tail": {
+														"$ref": "AAAAAAGAwM4f7VQlreE="
+													},
+													"points": "560:257;560:236;654:236;654:271;624:271",
+													"showVisibility": true,
+													"nameLabel": {
+														"$ref": "AAAAAAGBIqB2y63WGJk="
+													},
+													"stereotypeLabel": {
+														"$ref": "AAAAAAGBIqB2y63XYmU="
+													},
+													"propertyLabel": {
+														"$ref": "AAAAAAGBIqB2y63Yu40="
+													},
+													"showEndOrder": "hide",
+													"tailRoleNameLabel": {
+														"$ref": "AAAAAAGBIqB2y63Zcis="
+													},
+													"tailPropertyLabel": {
+														"$ref": "AAAAAAGBIqB2y63a3o0="
+													},
+													"tailMultiplicityLabel": {
+														"$ref": "AAAAAAGBIqB2y63biTs="
+													},
+													"headRoleNameLabel": {
+														"$ref": "AAAAAAGBIqB2y63caMQ="
+													},
+													"headPropertyLabel": {
+														"$ref": "AAAAAAGBIqB2y63dFJY="
+													},
+													"headMultiplicityLabel": {
+														"$ref": "AAAAAAGBIqB2y63eXQ4="
+													}
 												}
 											],
 											"sequenceNumbering": "custom"
@@ -5168,6 +5405,34 @@
 												},
 												"reference": {
 													"$ref": "AAAAAAGAwOIOK5owaYo="
+												}
+											}
+										},
+										{
+											"_type": "UMLConnector",
+											"_id": "AAAAAAGBIqB2yq3SGQw=",
+											"_parent": {
+												"$ref": "AAAAAAGAwM4f7VQjPs4="
+											},
+											"end1": {
+												"_type": "UMLConnectorEnd",
+												"_id": "AAAAAAGBIqB2y63TcOM=",
+												"_parent": {
+													"$ref": "AAAAAAGBIqB2yq3SGQw="
+												},
+												"reference": {
+													"$ref": "AAAAAAGAwM4f7VQjPs4="
+												}
+											},
+											"end2": {
+												"_type": "UMLConnectorEnd",
+												"_id": "AAAAAAGBIqB2y63UuKg=",
+												"_parent": {
+													"$ref": "AAAAAAGBIqB2yq3SGQw="
+												},
+												"name": "LoginUI",
+												"reference": {
+													"$ref": "AAAAAAGAwM4f7VQjPs4="
 												}
 											}
 										}
@@ -6088,9 +6353,9 @@
 																"$ref": "AAAAAAGA0RvPmMjxc2s="
 															},
 															"font": "Arial;13;0",
-															"left": 218.135986328125,
+															"left": 217.12353515625,
 															"top": 145,
-															"width": 112.72802734375,
+															"width": 114.7529296875,
 															"height": 13,
 															"alpha": 1.57079566012823,
 															"distance": 15,
@@ -6407,9 +6672,9 @@
 																"$ref": "AAAAAAGA0RvZj8mKDlI="
 															},
 															"font": "Arial;13;0",
-															"left": 423.715087890625,
+															"left": 423.12158203125,
 															"top": 256,
-															"width": 123.56982421875,
+															"width": 124.7568359375,
 															"height": 13,
 															"alpha": 0.041642573321581715,
 															"distance": 72.06247289678588,
@@ -7710,9 +7975,9 @@
 																"$ref": "AAAAAAGAwMOWwSwGDoQ="
 															},
 															"font": "Arial;13;0",
-															"left": 48.72998046875,
+															"left": 48.45703125,
 															"top": 13,
-															"width": 85.55078125,
+															"width": 86.91552734375,
 															"height": 13,
 															"text": "DeleteAccount"
 														},
@@ -7725,7 +7990,7 @@
 															"font": "Arial;13;1",
 															"left": 29,
 															"top": 13,
-															"width": 14.72998046875,
+															"width": 14.45703125,
 															"height": 13,
 															"text": "sd"
 														}
@@ -8403,7 +8668,7 @@
 															"height": 13,
 															"alpha": 1.5707963267948966,
 															"distance": 10,
-															"text": "2 : deleteAccount()"
+															"text": "1 : enterDeleteInfo()"
 														},
 														{
 															"_type": "NodeLabelView",
@@ -8716,13 +8981,13 @@
 																"$ref": "AAAAAAGA0SFen/zN/jE="
 															},
 															"font": "Arial;13;0",
-															"left": 394.52099609375,
+															"left": 382.241455078125,
 															"top": 319,
-															"width": 119.9580078125,
+															"width": 144.51708984375,
 															"height": 13,
 															"alpha": -1.4464407168635671,
 															"distance": 16.1245154965971,
-															"text": "2.1 : deleteAccount()"
+															"text": "2 : deleteThisAccount()"
 														},
 														{
 															"_type": "NodeLabelView",
@@ -9277,7 +9542,7 @@
 															"height": 13,
 															"alpha": 0.06165016304739845,
 															"distance": 81.15417426109393,
-															"text": "2.1.1. removeAccount()"
+															"text": "2.1. deleteAccount()"
 														},
 														{
 															"_type": "NodeLabelView",
@@ -9591,13 +9856,13 @@
 																"$ref": "AAAAAAGA0SJOAAtifzs="
 															},
 															"font": "Arial;13;0",
-															"left": 402.20458984375,
+															"left": 390.686767578125,
 															"top": 261,
-															"width": 102.5908203125,
+															"width": 125.62646484375,
 															"height": 13,
 															"alpha": 1.5707963267948966,
 															"distance": 10,
-															"text": "1 : startInterface()"
+															"text": "1 : DeleteAccountUI()"
 														},
 														{
 															"_type": "NodeLabelView",
@@ -9754,19 +10019,6 @@
 													"nameCompartment": {
 														"$ref": "AAAAAAGA0SMG0BwyMR8="
 													}
-												},
-												{
-													"_type": "UMLTextView",
-													"_id": "AAAAAAGA0SQKlC8xQUs=",
-													"_parent": {
-														"$ref": "AAAAAAGAwMOWwSwFEH4="
-													},
-													"font": "Arial;13;0",
-													"left": 568,
-													"top": 376,
-													"width": 161,
-													"height": 25,
-													"text": "2.2 : removeAccountInfo()"
 												},
 												{
 													"_type": "UMLConnectorView",
@@ -10024,13 +10276,13 @@
 																"$ref": "AAAAAAGA0SSCaDnvuB4="
 															},
 															"font": "Arial;13;0",
-															"left": 338.52099609375,
+															"left": 337.756103515625,
 															"top": 400,
-															"width": 119.9580078125,
+															"width": 121.48779296875,
 															"height": 13,
 															"alpha": 1.57079566012823,
 															"distance": 15,
-															"text": "2.3 : deleteAccount()"
+															"text": "2.2 : deleteAccount()"
 														},
 														{
 															"_type": "NodeLabelView",
@@ -10098,7 +10350,7 @@
 											"_parent": {
 												"$ref": "AAAAAAGAwMOWwSwEtRQ="
 											},
-											"name": "deleteAccount()",
+											"name": "enterDeleteInfo()",
 											"source": {
 												"$ref": "AAAAAAGA0R8gh/cyKMc="
 											},
@@ -10108,7 +10360,7 @@
 											"connector": {
 												"$ref": "AAAAAAGA0SEr5/sCjlU="
 											},
-											"sequenceNumber": "2"
+											"sequenceNumber": "1"
 										},
 										{
 											"_type": "UMLMessage",
@@ -10116,7 +10368,7 @@
 											"_parent": {
 												"$ref": "AAAAAAGAwMOWwSwEtRQ="
 											},
-											"name": "deleteAccount()",
+											"name": "deleteThisAccount()",
 											"source": {
 												"$ref": "AAAAAAGA0R/ELvi0TA4="
 											},
@@ -10126,7 +10378,7 @@
 											"connector": {
 												"$ref": "AAAAAAGA0SFen/y/7lE="
 											},
-											"sequenceNumber": "2.1"
+											"sequenceNumber": "2"
 										},
 										{
 											"_type": "UMLMessage",
@@ -10134,7 +10386,7 @@
 											"_parent": {
 												"$ref": "AAAAAAGAwMOWwSwEtRQ="
 											},
-											"name": "2.1.1. removeAccount()",
+											"name": "2.1. deleteAccount()",
 											"source": {
 												"$ref": "AAAAAAGA0SATh/nNi74="
 											},
@@ -10151,7 +10403,7 @@
 											"_parent": {
 												"$ref": "AAAAAAGAwMOWwSwEtRQ="
 											},
-											"name": "startInterface()",
+											"name": "DeleteAccountUI()",
 											"source": {
 												"$ref": "AAAAAAGA0SATh/nNi74="
 											},
@@ -10179,7 +10431,7 @@
 											"connector": {
 												"$ref": "AAAAAAGA0SSCaDnhghA="
 											},
-											"sequenceNumber": "2.3"
+											"sequenceNumber": "2.2"
 										}
 									],
 									"participants": [
@@ -10879,7 +11131,7 @@
 													"font": "Arial;13;0",
 													"left": 461,
 													"top": 317,
-													"width": 99.353515625,
+													"width": 100.78173828125,
 													"height": 13,
 													"text": "«control»"
 												},
@@ -10892,7 +11144,7 @@
 													"font": "Arial;13;1",
 													"left": 461,
 													"top": 332,
-													"width": 99.353515625,
+													"width": 100.78173828125,
 													"height": 13,
 													"text": "CreateAccount"
 												},
@@ -10927,7 +11179,7 @@
 											"font": "Arial;13;0",
 											"left": 456,
 											"top": 312,
-											"width": 109.353515625,
+											"width": 110.78173828125,
 											"height": 38,
 											"stereotypeLabel": {
 												"$ref": "AAAAAAGAy87fXxFQZno="
@@ -10954,7 +11206,7 @@
 											"font": "Arial;13;0",
 											"left": 456,
 											"top": 350,
-											"width": 109.353515625,
+											"width": 110.78173828125,
 											"height": 10
 										},
 										{
@@ -10997,7 +11249,7 @@
 													"font": "Arial;13;0",
 													"left": 461,
 													"top": 367,
-													"width": 99.353515625,
+													"width": 100.78173828125,
 													"height": 13,
 													"text": "+createAccount()",
 													"horizontalAlignment": 0
@@ -11006,7 +11258,7 @@
 											"font": "Arial;13;0",
 											"left": 456,
 											"top": 360,
-											"width": 109.353515625,
+											"width": 110.78173828125,
 											"height": 25
 										},
 										{
@@ -11046,7 +11298,7 @@
 									"containerChangeable": true,
 									"left": 456,
 									"top": 312,
-									"width": 109.353515625,
+									"width": 110.78173828125,
 									"height": 73,
 									"nameCompartment": {
 										"$ref": "AAAAAAGAy87fXxFPitQ="
@@ -11333,7 +11585,7 @@
 													"font": "Arial;13;0",
 													"left": 1712,
 													"top": -400,
-													"width": 109.8017578125,
+													"width": 110.220703125,
 													"height": 13,
 													"text": "(from Subsystem1)"
 												},
@@ -11529,7 +11781,7 @@
 													"font": "Arial;13;0",
 													"left": 32,
 													"top": -112,
-													"width": 109.8017578125,
+													"width": 110.220703125,
 													"height": 13,
 													"text": "(from Subsystem1)"
 												},
@@ -11715,7 +11967,7 @@
 													"font": "Arial;13;0",
 													"left": 765,
 													"top": 317,
-													"width": 98.642578125,
+													"width": 101.4482421875,
 													"height": 13,
 													"text": "«control»"
 												},
@@ -11728,7 +11980,7 @@
 													"font": "Arial;13;1",
 													"left": 765,
 													"top": 332,
-													"width": 98.642578125,
+													"width": 101.4482421875,
 													"height": 13,
 													"text": "DeleteAccount"
 												},
@@ -11742,7 +11994,7 @@
 													"font": "Arial;13;0",
 													"left": 32,
 													"top": -48,
-													"width": 109.8017578125,
+													"width": 110.220703125,
 													"height": 13,
 													"text": "(from Subsystem1)"
 												},
@@ -11763,7 +12015,7 @@
 											"font": "Arial;13;0",
 											"left": 760,
 											"top": 312,
-											"width": 108.642578125,
+											"width": 111.4482421875,
 											"height": 38,
 											"stereotypeLabel": {
 												"$ref": "AAAAAAGA0ZOIEUEFy/A="
@@ -11790,7 +12042,7 @@
 											"font": "Arial;13;0",
 											"left": 760,
 											"top": 350,
-											"width": 108.642578125,
+											"width": 111.4482421875,
 											"height": 10
 										},
 										{
@@ -11815,7 +12067,7 @@
 													"font": "Arial;13;0",
 													"left": 765,
 													"top": 365,
-													"width": 98.642578125,
+													"width": 101.4482421875,
 													"height": 13,
 													"text": "+deleteAccount()",
 													"horizontalAlignment": 0
@@ -11824,7 +12076,7 @@
 											"font": "Arial;13;0",
 											"left": 760,
 											"top": 360,
-											"width": 108.642578125,
+											"width": 111.4482421875,
 											"height": 23
 										},
 										{
@@ -11864,7 +12116,7 @@
 									"containerChangeable": true,
 									"left": 760,
 									"top": 312,
-									"width": 108.642578125,
+									"width": 111.4482421875,
 									"height": 71,
 									"nameCompartment": {
 										"$ref": "AAAAAAGA0ZOIEUEExW8="
@@ -11911,7 +12163,7 @@
 													"font": "Arial;13;0",
 													"left": 765,
 													"top": 413,
-													"width": 98.642578125,
+													"width": 101.4482421875,
 													"height": 13,
 													"text": "«entity»"
 												},
@@ -11924,7 +12176,7 @@
 													"font": "Arial;13;1",
 													"left": 765,
 													"top": 428,
-													"width": 98.642578125,
+													"width": 101.4482421875,
 													"height": 13,
 													"text": "AccountDB"
 												},
@@ -11938,7 +12190,7 @@
 													"font": "Arial;13;0",
 													"left": 16,
 													"top": -16,
-													"width": 109.8017578125,
+													"width": 110.220703125,
 													"height": 13,
 													"text": "(from Subsystem1)"
 												},
@@ -11959,7 +12211,7 @@
 											"font": "Arial;13;0",
 											"left": 760,
 											"top": 408,
-											"width": 108.642578125,
+											"width": 111.4482421875,
 											"height": 38,
 											"stereotypeLabel": {
 												"$ref": "AAAAAAGA0ZPnKEGvejI="
@@ -11996,7 +12248,7 @@
 													"font": "Arial;13;0",
 													"left": 765,
 													"top": 451,
-													"width": 98.642578125,
+													"width": 101.4482421875,
 													"height": 13,
 													"text": "+AccountList",
 													"horizontalAlignment": 0
@@ -12005,7 +12257,7 @@
 											"font": "Arial;13;0",
 											"left": 760,
 											"top": 446,
-											"width": 108.642578125,
+											"width": 111.4482421875,
 											"height": 23
 										},
 										{
@@ -12030,7 +12282,7 @@
 													"font": "Arial;13;0",
 													"left": 765,
 													"top": 474,
-													"width": 98.642578125,
+													"width": 101.4482421875,
 													"height": 13,
 													"text": "+getAccount()",
 													"horizontalAlignment": 0
@@ -12047,7 +12299,7 @@
 													"font": "Arial;13;0",
 													"left": 765,
 													"top": 489,
-													"width": 98.642578125,
+													"width": 101.4482421875,
 													"height": 13,
 													"text": "+storeAccount()",
 													"horizontalAlignment": 0
@@ -12064,7 +12316,7 @@
 													"font": "Arial;13;0",
 													"left": 765,
 													"top": 504,
-													"width": 98.642578125,
+													"width": 101.4482421875,
 													"height": 13,
 													"text": "+deleteAccount()",
 													"horizontalAlignment": 0
@@ -12081,7 +12333,7 @@
 													"font": "Arial;13;0",
 													"left": 765,
 													"top": 519,
-													"width": 98.642578125,
+													"width": 101.4482421875,
 													"height": 13,
 													"text": "+checkAccount()",
 													"horizontalAlignment": 0
@@ -12098,7 +12350,7 @@
 													"font": "Arial;13;0",
 													"left": 765,
 													"top": 534,
-													"width": 98.642578125,
+													"width": 101.4482421875,
 													"height": 13,
 													"text": "+logIn()",
 													"horizontalAlignment": 0
@@ -12115,7 +12367,7 @@
 													"font": "Arial;13;0",
 													"left": 765,
 													"top": 549,
-													"width": 98.642578125,
+													"width": 101.4482421875,
 													"height": 13,
 													"text": "+logOut()",
 													"horizontalAlignment": 0
@@ -12124,7 +12376,7 @@
 											"font": "Arial;13;0",
 											"left": 760,
 											"top": 469,
-											"width": 108.642578125,
+											"width": 111.4482421875,
 											"height": 98
 										},
 										{
@@ -12164,7 +12416,7 @@
 									"containerChangeable": true,
 									"left": 760,
 									"top": 408,
-									"width": 108.642578125,
+									"width": 111.4482421875,
 									"height": 159,
 									"nameCompartment": {
 										"$ref": "AAAAAAGA0ZPnKEGuy7k="
@@ -12238,7 +12490,7 @@
 													"font": "Arial;13;0",
 													"left": 16,
 													"top": -96,
-													"width": 109.8017578125,
+													"width": 110.220703125,
 													"height": 13,
 													"text": "(from Subsystem1)"
 												},
@@ -12451,7 +12703,7 @@
 													"font": "Arial;13;0",
 													"left": -16,
 													"top": -64,
-													"width": 109.8017578125,
+													"width": 110.220703125,
 													"height": 13,
 													"text": "(from Subsystem1)"
 												},
@@ -12664,7 +12916,7 @@
 													"font": "Arial;13;0",
 													"left": -48,
 													"top": -16,
-													"width": 109.8017578125,
+													"width": 110.220703125,
 													"height": 13,
 													"text": "(from Subsystem1)"
 												},
@@ -12824,9 +13076,9 @@
 												"$ref": "AAAAAAGA0bpx4Kv+frw="
 											},
 											"font": "Arial;13;0",
-											"left": 667,
+											"left": 665,
 											"top": 478,
-											"width": 70.45263671875,
+											"width": 74.78173828125,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -13397,7 +13649,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGA0ZPnKEGr5oc="
 									},
-									"name": "AccountList"
+									"name": "AccountList",
+									"type": ""
 								}
 							],
 							"operations": [
