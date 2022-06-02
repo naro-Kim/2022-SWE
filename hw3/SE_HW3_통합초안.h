@@ -77,7 +77,7 @@ class DeleteAccountUI {
 	DeleteAccount* deleteAccount;
 public:
 	DeleteAccountUI(DeleteAccount* deleteAccount);
-	void enterDeleteInfo();
+	void enterDeleteInfo(Account* loginPointer);
 	void printResult(string id);
 };
 
@@ -87,10 +87,11 @@ public:
 //Author : 김아현
 class DeleteAccount {
 	DeleteAccountUI* deleteAccountUi;
+	Account* loginPointer; // 로그인한 계정을 가리키는 포인터
 	AccountDB* accountDB;
 public:
-	DeleteAccount(AccountDB* accountDB);
-	void deleteThisAccount(string id);
+	DeleteAccount(AccountDB* accountDB, Account* loginPointer);
+	void deleteThisAccount(Account* loginPointer);
 };
 
 
@@ -126,7 +127,7 @@ class LogOutUI {
 public:
 	LogOutUI(LogOut* logOut);
 	void enterLogOutInfo();
-	void printResult(); // parameter?
+	void printResult(string ID);
 };
 
 
@@ -140,7 +141,6 @@ class LogOut {
 public:
 	LogOut(AccountDB* accountDB, Account *loginPointer);
 	void requestLogOut();
-	//void getLogOutPointer();
 };
 
 class CheckPrdouctListOnSale {
@@ -363,8 +363,7 @@ public:
 	Account* getAccountIndex(string ID);
 	bool checkAccount(string ID, string password);
 	void logIn(string ID, string password);
-	void logOut(string ID);
-	//unsigned int returnsize();
+	void logOut(string ID); 
 };
 
 

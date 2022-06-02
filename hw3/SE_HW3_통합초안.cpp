@@ -45,7 +45,7 @@ void SelectMenu::doTask() {
             {
                 fout << "1.2. 회원탈퇴" << endl;
                 DeleteAccount* deleteAccount;
-                deleteAccount = new DeleteAccount(accountDB);
+                deleteAccount = new DeleteAccount(accountDB, login->getLoginAccount());
                 break;
             }
             }
@@ -463,38 +463,41 @@ DeleteAccountUI::DeleteAccountUI(DeleteAccount* deleteAccount)
     this->deleteAccount = deleteAccount;
 }
 
-// Function : void DeleteAccountUI::enterDeleteInfo()
-// Description : 회원탈퇴 삭제할 계정의 ID를 입력받는 함수
-// Return Value : void
-// Author: 김아현
 
-void DeleteAccountUI::enterDeleteInfo()
-{
-    string id;
-    this->deleteAccount->deleteThisAccount(id);
-}
-
-// 회원탈퇴 컨트롤 클래스 생성자
-DeleteAccount::DeleteAccount(AccountDB *accountDB)
+/// 회원탈퇴 컨트롤 클래스 생성자
+DeleteAccount::DeleteAccount(AccountDB* accountDB, Account* loginPointer)
 {
     DeleteAccountUI* deleteAccountUi = new DeleteAccountUI(this);
     this->deleteAccountUi = deleteAccountUi;
     this->accountDB = accountDB;
-    this->deleteAccountUi->enterDeleteInfo();
+    this->loginPointer = loginPointer; //로그인한 계정을 가리키는 포인터
+    this->deleteAccountUi->enterDeleteInfo(loginPointer);
 }
 
-// Function : void DeleteAccount::deleteThisAccount(string id)
-// Description : 회원탈퇴 계정을 DB에서 삭제하고 그 결과를 출력하는 함수
-// Parameter : string id - 삭제할 회원 id
+
+// Function : void DeleteAccountUI::enterDeleteInfo(Account* loginPointer)
+// Description : 회원탈퇴 삭제할 계정의 ID를 입력받는 함수
+// Parameter : Account* loginPointer - 로그인한 회원을 가리키는 포인터
 // Return Value : void
 // Author: 김아현
-// // Revsions : 조은비
 
-void DeleteAccount::deleteThisAccount(string id)
+void DeleteAccountUI::enterDeleteInfo(Account* loginPointer)
 {
-    this->accountDB->deleteAccount(id);
-    this->deleteAccountUi->printResult(id);
-} 
+    this->deleteAccount->deleteThisAccount(loginPointer);
+}
+
+
+//Function: void DeleteAccount::deleteThisAccount(Account* loginPointer)
+//Description: 로그인했던 회원을 대상으로 AccountDB로 부터 해당 회원의 계정을 삭제하는 함수
+//Parameter : Account* loginPointer - 로그인한 회원을 가리키는 포인터
+//Return Value : void
+//Author: 김아현
+
+void DeleteAccount::deleteThisAccount(Account* loginPointer)
+{
+    this->accountDB->deleteAccount(loginPointer->getID());
+    this->deleteAccountUi->printResult(loginPointer->getID());
+}
 
 // Function : void DeleteAccountUI::printResult(string id)
 // Description : 회원탈퇴 바운더리에서 계정 삭제 후 결과로 해당 계정의 정보를 출력하는 함수
