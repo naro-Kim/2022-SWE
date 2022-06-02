@@ -592,9 +592,8 @@ void LogOutUI::enterLogOutInfo()
 // Return Value : void
 // Author: 김아현
 
-void LogOutUI::printResult() {
-    //fout << "> " << logOutPointer->getID() << endl;
-    
+void LogOutUI::printResult(string ID) {
+    fout << "> " << ID << endl;
 }
 
 // 로그아웃 컨트롤 클래스 생성자
