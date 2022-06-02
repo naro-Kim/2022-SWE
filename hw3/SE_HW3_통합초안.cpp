@@ -1,17 +1,17 @@
 #include "SE_HW3.h"
 
 //Function: void SelectMenu::doTask()
-//Description: ÀÔ·Â ÆÄÀÏ¿¡¼­ ¸Ş´º¸¦ ³ªÅ¸³»´Â ¼ıÀÚ 2°³¸¦ ÀĞ¾î¼­ ¾î¶² ¸Ş´º¿¡ ÇØ´çÇÏ´ÂÁö switch¹®À¸·Î ÆÇº°ÇÑ´Ù. ±×¸®°í ÇØ´çÇÏ´Â ¸Ş´ºÀÇ ÄÁÆ®·Ñ Å¬·¡½º¸¦ »ı¼ºÇÑ´Ù.
-//Author: Á¶Àººñ
+//Description: ì…ë ¥ íŒŒì¼ì—ì„œ ë©”ë‰´ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ìˆ«ì 2ê°œë¥¼ ì½ì–´ì„œ ì–´ë–¤ ë©”ë‰´ì— í•´ë‹¹í•˜ëŠ”ì§€ switchë¬¸ìœ¼ë¡œ íŒë³„í•œë‹¤. ê·¸ë¦¬ê³  í•´ë‹¹í•˜ëŠ” ë©”ë‰´ì˜ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ë¥¼ ìƒì„±í•œë‹¤.
+//Author: ì¡°ì€ë¹„
 void SelectMenu::doTask() {
     int menu_level_1 = 0, menu_level_2 = 0;
     int is_program_exit = 0;
-    AccountDB* accountDB = new AccountDB(); // DB Á¢±Ù ¿ëÀÌÇÏ°Ô ÇÏ±â À§ÇÔ
-    Login* login = 0; // ·Î±×ÀÎÇÑ »ç¿ëÀÚ Á¢±Ù ¿ëÀÌÇÏ°Ô ÇÏ±â À§ÇÔ
+    AccountDB* accountDB = new AccountDB(); // DB ì ‘ê·¼ ìš©ì´í•˜ê²Œ í•˜ê¸° ìœ„í•¨
+    Login* login = 0; // ë¡œê·¸ì¸í•œ ì‚¬ìš©ì ì ‘ê·¼ ìš©ì´í•˜ê²Œ í•˜ê¸° ìœ„í•¨
     Seller* seller = 0;
     Buyer* buyer = 0;
-    SearchProduct* searchproduct = 0; // °Ë»öÇÑ »óÇ°À» ³ªÅ¸³¿
-    vector<string> boughtListSellerIDList; // ±¸¸Å ³»¿ª¿¡ ÀÖ´Â »óÇ°µéÀÇ ÆÇ¸ÅÀÚ ID ¸®½ºÆ®
+    SearchProduct* searchproduct = 0; // ê²€ìƒ‰í•œ ìƒí’ˆì„ ë‚˜íƒ€ëƒ„
+    vector<string> boughtListSellerIDList; // êµ¬ë§¤ ë‚´ì—­ì— ìˆëŠ” ìƒí’ˆë“¤ì˜ íŒë§¤ì ID ë¦¬ìŠ¤íŠ¸
     vector<string> sortedBoughtListNames;
     vector<Seller*> sellerList;
     vector<Buyer*> buyerList;
@@ -22,11 +22,11 @@ void SelectMenu::doTask() {
 
     while (!is_program_exit)
     {
-        // ÀÔ·ÂÆÄÀÏ¿¡¼­ ¸Ş´º ¼ıÀÚ 2°³¸¦ ÀĞ±â
+        // ì…ë ¥íŒŒì¼ì—ì„œ ë©”ë‰´ ìˆ«ì 2ê°œë¥¼ ì½ê¸°
         fin >> menu_level_1;
         fin >> menu_level_2;
-        //cout << "db µ¥ÀÌÅÍ °³¼ö " << accountDB->returnsize();
-        // ¸Ş´º ±¸ºĞ ¹× ÇØ´ç ¿¬»ê ¼öÇà
+        //cout << "db ë°ì´í„° ê°œìˆ˜ " << accountDB->returnsize();
+        // ë©”ë‰´ êµ¬ë¶„ ë° í•´ë‹¹ ì—°ì‚° ìˆ˜í–‰
         switch (menu_level_1)
         {
         case 1:
@@ -35,7 +35,7 @@ void SelectMenu::doTask() {
             {
             case 1:
             {
-                fout << "1.1. È¸¿ø°¡ÀÔ" << endl;
+                fout << "1.1. íšŒì›ê°€ì…" << endl;
                 CreateAccount* createAccount;
                 createAccount = new CreateAccount(accountDB);
 
@@ -43,7 +43,7 @@ void SelectMenu::doTask() {
             }
             case 2:
             {
-                fout << "1.2. È¸¿øÅ»Åğ" << endl;
+                fout << "1.2. íšŒì›íƒˆí‡´" << endl;
                 DeleteAccount* deleteAccount;
                 deleteAccount = new DeleteAccount(accountDB, login->getLoginAccount());
                 break;
@@ -58,13 +58,13 @@ void SelectMenu::doTask() {
             case 1:
             {
                 //Login* login;
-                fout << "2.1. ·Î±×ÀÎ" << endl;
+                fout << "2.1. ë¡œê·¸ì¸" << endl;
                 login = new Login(accountDB);
                 break;
             }
             case 2:
             {
-                fout << "2.2. ·Î±×¾Æ¿ô" << endl;
+                fout << "2.2. ë¡œê·¸ì•„ì›ƒ" << endl;
                 LogOut* logOut;
                 logOut = new LogOut(accountDB, login->getLoginAccount());
                 break;
@@ -77,44 +77,45 @@ void SelectMenu::doTask() {
             bool find = false;
             unsigned int i = 0;
             while (i < sellerList.size()) {
-                if (sellerList[i]->getID() == login->getLoginAccount()->getID()) { // ÇöÀç ·Î±×ÀÎÇÑ °èÁ¤ÀÌ ÀÌ¹Ì ÆÇ¸ÅÀÚ ¸®½ºÆ®¿¡ µî·ÏµÇ¾î ÀÖ´ÂÁö Ã¼Å©
+                if (sellerList[i]->getID() == login->getLoginAccount()->getID()) { // í˜„ì¬ ë¡œê·¸ì¸í•œ ê³„ì •ì´ ì´ë¯¸ íŒë§¤ì ë¦¬ìŠ¤íŠ¸ì— ë“±ë¡ë˜ì–´ ìˆëŠ”ì§€ ì²´í¬
                     find = true;
                     break;
                 }
+                i++;
             }
             if (find) {
                 seller = sellerList[i];
             }
             else {
-                seller = new Seller(login->getLoginAccount()->getName(), login->getLoginAccount()->getSsn(), login->getLoginAccount()->getID(), login->getLoginAccount()->getPassword()); // ÆÇ¸ÅÀÚ °èÁ¤À¸·Î µî·Ï
-                sellerList.push_back(seller); //ÆÇ¸ÅÀÚ ¸®½ºÆ®¿¡ Ãß°¡
+                seller = new Seller(login->getLoginAccount()->getName(), login->getLoginAccount()->getSsn(), login->getLoginAccount()->getID(), login->getLoginAccount()->getPassword()); // íŒë§¤ì ê³„ì •ìœ¼ë¡œ ë“±ë¡
+                sellerList.push_back(seller); //íŒë§¤ì ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
             }
             switch (menu_level_2)
             {
-                //cout << "ÇöÀç ·Î±×ÀÎÇÑ °èÁ¤" << login->getLoginAccount()->getID();
+                //cout << "í˜„ì¬ ë¡œê·¸ì¸í•œ ê³„ì •" << login->getLoginAccount()->getID();
                 //seller = (Seller*)login->getLoginAccount();
-                //cout << "ÇöÀç ·Î±×ÀÎÇÑ °èÁ¤" << seller->getID();
-            case 1: // "3.1. ÆÇ¸Å ÀÇ·ù µî·Ï ¸Ş´º ºÎºĞ
-            { // control class »ı¼º
-                //cout << "ÇöÀç ·Î±×ÀÎÇÑ °èÁ¤" << login->getLoginAccount()->getID();
-                //seller = new Seller(login->getLoginAccount()->getName(), login->getLoginAccount()->getSsn(), login->getLoginAccount()->getID(), login->getLoginAccount()->getPassword()); // ÆÇ¸ÅÀÚ °èÁ¤À¸·Î µî·Ï
-                //sellerList.push_back(seller); //ÆÇ¸ÅÀÚ ¸®½ºÆ®¿¡ Ãß°¡
-                fout << "3.1. ÆÇ¸Å ÀÇ·ù µî·Ï " << endl;
+                //cout << "í˜„ì¬ ë¡œê·¸ì¸í•œ ê³„ì •" << seller->getID();
+            case 1: // "3.1. íŒë§¤ ì˜ë¥˜ ë“±ë¡ ë©”ë‰´ ë¶€ë¶„
+            { // control class ìƒì„±
+                //cout << "í˜„ì¬ ë¡œê·¸ì¸í•œ ê³„ì •" << login->getLoginAccount()->getID();
+                //seller = new Seller(login->getLoginAccount()->getName(), login->getLoginAccount()->getSsn(), login->getLoginAccount()->getID(), login->getLoginAccount()->getPassword()); // íŒë§¤ì ê³„ì •ìœ¼ë¡œ ë“±ë¡
+                //sellerList.push_back(seller); //íŒë§¤ì ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
+                fout << "3.1. íŒë§¤ ì˜ë¥˜ ë“±ë¡ " << endl;
                 //seller = (Seller*)login->getLoginAccount();
                 //seller = (Seller*)login->getLoginAccount();
                 AddClothes* registClothes = new AddClothes(seller); 
                 break; 
             }
-            case 2: // 3.2 µî·Ï »óÇ° Á¶È¸(ÆÇ¸ÅÁß)
+            case 2: // 3.2 ë“±ë¡ ìƒí’ˆ ì¡°íšŒ(íŒë§¤ì¤‘)
             {
-                fout << "3.2. µî·Ï »óÇ° Á¶È¸ " << endl;
+                fout << "3.2. ë“±ë¡ ìƒí’ˆ ì¡°íšŒ " << endl;
                 CheckPrdouctListOnSale* checkProudctListOnSale = new CheckPrdouctListOnSale(seller);
 
                 break;
             }
-            case 3: // 3.3 ÆÇ¸Å ¿Ï·á »óÇ° Á¶È¸
+            case 3: // 3.3 íŒë§¤ ì™„ë£Œ ìƒí’ˆ ì¡°íšŒ
             {
-                fout << "3.3 ÆÇ¸Å ¿Ï·á »óÇ° Á¶È¸ " << endl;
+                fout << "3.3 íŒë§¤ ì™„ë£Œ ìƒí’ˆ ì¡°íšŒ " << endl;
                 CheckPrdouctInfoSold* checkPrdouctInfoSold = new CheckPrdouctInfoSold(seller);
                 break;
             }
@@ -126,7 +127,7 @@ void SelectMenu::doTask() {
             bool find = false;
             unsigned int i = 0;
             while (i < buyerList.size()) {
-                if (buyerList[i]->getID() == login->getLoginAccount()->getID()) { // ÇöÀç ·Î±×ÀÎÇÑ °èÁ¤ÀÌ ÀÌ¹Ì ±¸¸ÅÀÚ ¸®½ºÆ®¿¡ µî·ÏµÇ¾î ÀÖ´ÂÁö Ã¼Å©
+                if (buyerList[i]->getID() == login->getLoginAccount()->getID()) { // í˜„ì¬ ë¡œê·¸ì¸í•œ ê³„ì •ì´ ì´ë¯¸ êµ¬ë§¤ì ë¦¬ìŠ¤íŠ¸ì— ë“±ë¡ë˜ì–´ ìˆëŠ”ì§€ ì²´í¬
                     find = true;
                     break;
                 }
@@ -136,38 +137,38 @@ void SelectMenu::doTask() {
                 buyer = buyerList[i];
             }
             else {
-                buyer = new Buyer(login->getLoginAccount()->getName(), login->getLoginAccount()->getSsn(), login->getLoginAccount()->getID(), login->getLoginAccount()->getPassword()); //±¸¸ÅÀÚ °èÁ¤À¸·Î µî·Ï
-                buyerList.push_back(buyer); //±¸¸ÅÀÚ ¸®½ºÆ®¿¡ Ãß°¡
+                buyer = new Buyer(login->getLoginAccount()->getName(), login->getLoginAccount()->getSsn(), login->getLoginAccount()->getID(), login->getLoginAccount()->getPassword()); //êµ¬ë§¤ì ê³„ì •ìœ¼ë¡œ ë“±ë¡
+                buyerList.push_back(buyer); //êµ¬ë§¤ì ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
             }
             switch (menu_level_2)
             {
-            case 1:   // "4.1. »óÇ° °Ë»ö¡° ¸Ş´º ºÎºĞ
+            case 1:   // "4.1. ìƒí’ˆ ê²€ìƒ‰â€œ ë©”ë‰´ ë¶€ë¶„
             {
-                // »óÇ° °Ë»ö ÄÁÆ®·Ñ Å¬·¡½º »ı¼º
-                fout << "4.1. »óÇ° Á¤º¸ °Ë»ö " << endl;
+                // ìƒí’ˆ ê²€ìƒ‰ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ ìƒì„±
+                fout << "4.1. ìƒí’ˆ ì •ë³´ ê²€ìƒ‰ " << endl;
                 searchproduct = new SearchProduct(sellerList);
                 break;
             }
-            case 2:   // "4.2. »óÇ° ±¸¸Å¡° ¸Ş´º ºÎºĞ
+            case 2:   // "4.2. ìƒí’ˆ êµ¬ë§¤â€œ ë©”ë‰´ ë¶€ë¶„
             {
-                // »óÇ° ±¸¸Å ÄÁÆ®·Ñ Å¬·¡½º »ı¼º
-                fout << "4.2. »óÇ° ±¸¸Å " << endl;
+                // ìƒí’ˆ êµ¬ë§¤ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ ìƒì„±
+                fout << "4.2. ìƒí’ˆ êµ¬ë§¤ " << endl;
                 BuyProduct* buyproduct = new BuyProduct(buyer, searchproduct->getSearchProductSeller(), searchproduct->getSearchProduct());
                 break;
             }
-            case 3:   // "4.3. ±¸¸Å ³»¿ª Á¶È¸¡° ¸Ş´º ºÎºĞ
+            case 3:   // "4.3. êµ¬ë§¤ ë‚´ì—­ ì¡°íšŒâ€œ ë©”ë‰´ ë¶€ë¶„
             {
-                // ±¸¸Å ³»¿ª Á¶È¸ ÄÁÆ®·Ñ Å¬·¡½º »ı¼º
-                fout << "4.3. »óÇ° ±¸¸Å ³»¿ª Á¶È¸ " << endl;
+                // êµ¬ë§¤ ë‚´ì—­ ì¡°íšŒ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ ìƒì„±
+                fout << "4.3. ìƒí’ˆ êµ¬ë§¤ ë‚´ì—­ ì¡°íšŒ " << endl;
                 SeeBoughtList* seeboughtlist = new SeeBoughtList(buyer, sellerList);
                 boughtListSellerIDList = seeboughtlist->getSellerIDList();
                 sortedBoughtListNames = seeboughtlist->getSortedBoughtProductNameList();
                 break;
             }
-            case 4:   // "4.4. ±¸¸Å ¸¸Á·µµ Æò°¡¡° ¸Ş´º ºÎºĞ
+            case 4:   // "4.4. êµ¬ë§¤ ë§Œì¡±ë„ í‰ê°€â€œ ë©”ë‰´ ë¶€ë¶„
             {
-                // ±¸¸Å ¸¸Á·µµ Æò°¡ ÄÁÆ®·Ñ Å¬·¡½º »ı¼º
-                fout << "4.4. »óÇ° ±¸¸Å ¸¸Á·µµ Æò°¡ " << endl;
+                // êµ¬ë§¤ ë§Œì¡±ë„ í‰ê°€ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ ìƒì„±
+                fout << "4.4. ìƒí’ˆ êµ¬ë§¤ ë§Œì¡±ë„ í‰ê°€ " << endl;
                 EvaluateBuySatisfaction* evaluatebuysatisfaction = new EvaluateBuySatisfaction(buyer, boughtListSellerIDList, sortedBoughtListNames);
                 break;
             }
@@ -178,22 +179,23 @@ void SelectMenu::doTask() {
             bool find = false;
             unsigned int i = 0;
             while (i < sellerList.size()) {
-                if (sellerList[i]->getID() == login->getLoginAccount()->getID()) { // ÇöÀç ·Î±×ÀÎÇÑ °èÁ¤ÀÌ ÀÌ¹Ì ÆÇ¸ÅÀÚ ¸®½ºÆ®¿¡ µî·ÏµÇ¾î ÀÖ´ÂÁö Ã¼Å©
+                if (sellerList[i]->getID() == login->getLoginAccount()->getID()) { // í˜„ì¬ ë¡œê·¸ì¸í•œ ê³„ì •ì´ ì´ë¯¸ íŒë§¤ì ë¦¬ìŠ¤íŠ¸ì— ë“±ë¡ë˜ì–´ ìˆëŠ”ì§€ ì²´í¬
                     find = true;
                     break;
                 }
+                i++;
             }
             if (find) {
                 seller = sellerList[i];
             }
             else {
-                seller = new Seller(login->getLoginAccount()->getName(), login->getLoginAccount()->getSsn(), login->getLoginAccount()->getID(), login->getLoginAccount()->getPassword()); // ÆÇ¸ÅÀÚ °èÁ¤À¸·Î µî·Ï
-                sellerList.push_back(seller); //ÆÇ¸ÅÀÚ ¸®½ºÆ®¿¡ Ãß°¡
+                seller = new Seller(login->getLoginAccount()->getName(), login->getLoginAccount()->getSsn(), login->getLoginAccount()->getID(), login->getLoginAccount()->getPassword()); // íŒë§¤ì ê³„ì •ìœ¼ë¡œ ë“±ë¡
+                sellerList.push_back(seller); //íŒë§¤ì ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
             }
             switch (menu_level_2)
             {
-            case 1://ÆÇ¸Å»óÇ°Åë°è
-                fout << "5.1 ÆÇ¸Å »óÇ° Åë°è " << endl;
+            case 1://íŒë§¤ìƒí’ˆí†µê³„
+                fout << "5.1 íŒë§¤ ìƒí’ˆ í†µê³„ " << endl;
                 PrintStatistics* printStatistics = new PrintStatistics(seller);
                 break;
             }
@@ -202,7 +204,7 @@ void SelectMenu::doTask() {
         case 6: {
             switch (menu_level_2)
             {
-            case 1: // "6.1. Á¾·á¡° ¸Ş´º ºÎºĞ
+            case 1: // "6.1. ì¢…ë£Œâ€œ ë©”ë‰´ ë¶€ë¶„
             {
                 programExit(); is_program_exit = 1; break;
             }
@@ -214,38 +216,38 @@ void SelectMenu::doTask() {
 }
 
 void SelectMenu::programExit() {
-    fout << "6.1. Á¾·á" << endl;
+    fout << "6.1. ì¢…ë£Œ" << endl;
 }
 
-//ÆÇ¸ÅÀÚ °èÁ¤ »ı¼º
+//íŒë§¤ì ê³„ì • ìƒì„±
 Seller::Seller(string name, string ssn, string ID, string password) {
     this->createAccount(name, ssn, ID, password);
 }
 
-//±¸¸ÅÀÚ °èÁ¤ »ı¼º
+//êµ¬ë§¤ì ê³„ì • ìƒì„±
 Buyer::Buyer(string name, string ssn, string ID, string password) {
     this->createAccount(name, ssn, ID, password);
 }
 
-//Á¤·ÄµÈ ±¸¸Å³»¿ª »óÇ°¸í ¸®½ºÆ® ¹İÈ¯
+//ì •ë ¬ëœ êµ¬ë§¤ë‚´ì—­ ìƒí’ˆëª… ë¦¬ìŠ¤íŠ¸ ë°˜í™˜
 vector<string> SeeBoughtList::getSortedBoughtProductNameList() {
     return this->sortedBoughtProductNames;
 }
 
 //Function: Account* Login::getLoginAccount()
-//Description: ÇöÀç ·Î±×ÀÎ »óÅÂÀÎ °èÁ¤À» °¡¸®Å°´Â Æ÷ÀÎÅÍ¸¦ ¹İÈ¯ÇÑ´Ù.
+//Description: í˜„ì¬ ë¡œê·¸ì¸ ìƒíƒœì¸ ê³„ì •ì„ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„°ë¥¼ ë°˜í™˜í•œë‹¤.
 // Return Value : Account*
-//Author: Á¶Àººñ
+//Author: ì¡°ì€ë¹„
 Account* Login::getLoginAccount() {
     return this->loginPointer;
     //return 0;
 }
 
 //Function: void Account::createAccount(string name, string ssn, string ID, string password)
-//Description: ÀÔ·Â¹ŞÀº Á¤º¸¸¦ Åä´ë·Î È¸¿øÀÇ °èÁ¤À» »ı¼ºÇÑ´Ù.
-//Parameter : string name - È¸¿ø °èÁ¤ ÀÌ¸§, string ssn - È¸¿ø ÁÖ¹Î¹øÈ£ , string ID - È¸¿ø ¾ÆÀÌµğ, string password - È¸¿ø ºñ¹Ğ¹øÈ£
+//Description: ì…ë ¥ë°›ì€ ì •ë³´ë¥¼ í† ëŒ€ë¡œ íšŒì›ì˜ ê³„ì •ì„ ìƒì„±í•œë‹¤.
+//Parameter : string name - íšŒì› ê³„ì • ì´ë¦„, string ssn - íšŒì› ì£¼ë¯¼ë²ˆí˜¸ , string ID - íšŒì› ì•„ì´ë””, string password - íšŒì› ë¹„ë°€ë²ˆí˜¸
 //Return Value : void
-//Author: ±è¾ÆÇö
+//Author: ê¹€ì•„í˜„
 void Account::createAccount(string name, string ssn, string ID, string password)
 {
     this->name = name;
@@ -255,16 +257,16 @@ void Account::createAccount(string name, string ssn, string ID, string password)
 }
 
 //Function: bool Account::getLogStatus()
-//Description: °´Ã¼ÀÇ ·Î±×ÀÎ »óÅÂ¸¦ ¹İÈ¯ÇÑ´Ù.
+//Description: ê°ì²´ì˜ ë¡œê·¸ì¸ ìƒíƒœë¥¼ ë°˜í™˜í•œë‹¤.
 //Return Value : bool
-//Author: ±è¾ÆÇö
+//Author: ê¹€ì•„í˜„
 
 bool Account::getLogStatus() { return this->logStatus; }
 
 //Function: bool Account::setLogStatus()
-//Description: °´Ã¼ÀÇ ·Î±×ÀÎ »óÅÂ¸¦ ¹İÀüÇÑ´Ù.
+//Description: ê°ì²´ì˜ ë¡œê·¸ì¸ ìƒíƒœë¥¼ ë°˜ì „í•œë‹¤.
 //Return Value : void
-//Author: ±è¾ÆÇö
+//Author: ê¹€ì•„í˜„
 
 void Account::setLogStatus()
 {
@@ -273,40 +275,40 @@ void Account::setLogStatus()
 }
 
 //Function: string Account::getID()
-//Description: °´Ã¼ÀÇ ID¸¦ ½ºÆ®¸µÀ¸·Î ¸®ÅÏÇÑ´Ù.
+//Description: ê°ì²´ì˜ IDë¥¼ ìŠ¤íŠ¸ë§ìœ¼ë¡œ ë¦¬í„´í•œë‹¤.
 //Return Value : string
-//Author: ±è¾ÆÇö  
+//Author: ê¹€ì•„í˜„  
   
 string Account::getID() { return this->ID; }
 
 //Function: string Account::getPassword()
-//Description: °´Ã¼ÀÇ Password¸¦ ½ºÆ®¸µÀ¸·Î ¸®ÅÏÇÑ´Ù.
+//Description: ê°ì²´ì˜ Passwordë¥¼ ìŠ¤íŠ¸ë§ìœ¼ë¡œ ë¦¬í„´í•œë‹¤.
 //Return Value : string
-//Author: ±è¾ÆÇö  
+//Author: ê¹€ì•„í˜„  
 
 string Account::getPassword() { return this->password; }
 
 //Function: string Account::getName()
-//Description: °´Ã¼ÀÇ NameÀ» ½ºÆ®¸µÀ¸·Î ¸®ÅÏÇÑ´Ù.
+//Description: ê°ì²´ì˜ Nameì„ ìŠ¤íŠ¸ë§ìœ¼ë¡œ ë¦¬í„´í•œë‹¤.
 //Return Value : string
-//Author: ±è¾ÆÇö  
+//Author: ê¹€ì•„í˜„  
 
 string Account::getName() { return this->name; }
 
 
 //Function: string Account::getSsn()
-//Description: °´Ã¼ÀÇ ssnÀ» ½ºÆ®¸µÀ¸·Î ¸®ÅÏÇÑ´Ù.
+//Description: ê°ì²´ì˜ ssnì„ ìŠ¤íŠ¸ë§ìœ¼ë¡œ ë¦¬í„´í•œë‹¤.
 //Return Value : string
-//Author: ±è¾ÆÇö  
+//Author: ê¹€ì•„í˜„  
 
 string Account::getSsn() { return this->ssn; }
 
 
 // Function : void AccountDB::storeAccount(Account* account)
-// Description: »ı¼ºÇÑ Account °´Ã¼¸¦ AccountDB³»¿¡ Àü´ŞÇØ ÀúÀåÇÑ´Ù.
-// Parameter : Account* account -  È¸¿ø ¸É¹ö °´Ã¼
+// Description: ìƒì„±í•œ Account ê°ì²´ë¥¼ AccountDBë‚´ì— ì „ë‹¬í•´ ì €ì¥í•œë‹¤.
+// Parameter : Account* account -  íšŒì› ë§´ë²„ ê°ì²´
 // Return Value : void
-// Author: ±è¾ÆÇö
+// Author: ê¹€ì•„í˜„
 
 void AccountDB::storeAccount(Account* account)
 {
@@ -314,11 +316,11 @@ void AccountDB::storeAccount(Account* account)
 }
 
 // Function : Account* AccountDB::getAccountIndex(string ID)
-// Description: AccountDB³»¿¡¼­ ÇØ´ç ID¸¦ °¡Áø °´Ã¼ÀÇ Æ÷ÀÎÅÍ¸¦ ¸®ÅÏ 
-// Parameter : string ID - È¸¿ø ¾ÆÀÌµğ 
+// Description: AccountDBë‚´ì—ì„œ í•´ë‹¹ IDë¥¼ ê°€ì§„ ê°ì²´ì˜ í¬ì¸í„°ë¥¼ ë¦¬í„´ 
+// Parameter : string ID - íšŒì› ì•„ì´ë”” 
 // Return Value : Account* 
-// Author: ±è¾ÆÇö
-// // Revsions : Á¶Àººñ  
+// Author: ê¹€ì•„í˜„
+// // Revsions : ì¡°ì€ë¹„  
 
 Account* AccountDB::getAccountIndex(string ID)
 { 
@@ -333,11 +335,11 @@ Account* AccountDB::getAccountIndex(string ID)
 }
 
 // Function : void AccountDB::deleteAccount(string ID)
-// Description: AccountDB³»¿¡¼­ ÇØ´ç ID¸¦ °¡Áø °´Ã¼ÀÇ Index¸¦ Ã£¾Æ³»¾î ÇØ´ç °´Ã¼¸¦ DB¿¡¼­ »èÁ¦ 
-// Parameter : string ID - È¸¿ø ¾ÆÀÌµğ 
+// Description: AccountDBë‚´ì—ì„œ í•´ë‹¹ IDë¥¼ ê°€ì§„ ê°ì²´ì˜ Indexë¥¼ ì°¾ì•„ë‚´ì–´ í•´ë‹¹ ê°ì²´ë¥¼ DBì—ì„œ ì‚­ì œ 
+// Parameter : string ID - íšŒì› ì•„ì´ë”” 
 // Return Value : void 
-// Author: ±è¾ÆÇö
-// // Revsions : Á¶Àººñ 
+// Author: ê¹€ì•„í˜„
+// // Revsions : ì¡°ì€ë¹„ 
 
 void AccountDB::deleteAccount(string ID)
 {
@@ -355,10 +357,10 @@ void AccountDB::deleteAccount(string ID)
 }
 
 // Function : bool AccountDB::checkAccount(string ID, string password)
-// Description: AccountDB³»¿¡¼­ parameter¿¡ ÇØ´çÇÏ´Â ID¿Í Password¸¦ °¡Áø account°¡ ÀÖ´ÂÁö È®ÀÎ ÈÄ ±× À¯È¿¼ºÀ» BooleanÀ¸·Î ¸®ÅÏ
-// Parameter : string ID - È¸¿ø ¾ÆÀÌµğ, string password - È¸¿ø ºñ¹Ğ¹øÈ£
+// Description: AccountDBë‚´ì—ì„œ parameterì— í•´ë‹¹í•˜ëŠ” IDì™€ Passwordë¥¼ ê°€ì§„ accountê°€ ìˆëŠ”ì§€ í™•ì¸ í›„ ê·¸ ìœ íš¨ì„±ì„ Booleanìœ¼ë¡œ ë¦¬í„´
+// Parameter : string ID - íšŒì› ì•„ì´ë””, string password - íšŒì› ë¹„ë°€ë²ˆí˜¸
 // Return Value : Bool 
-// Author: ±è¾ÆÇö
+// Author: ê¹€ì•„í˜„
 
 bool AccountDB::checkAccount(string ID, string password)
 {
@@ -375,10 +377,10 @@ bool AccountDB::checkAccount(string ID, string password)
 }
 
 // Function : void AccountDB::logIn(string ID, string password)
-// Description : AccountDB³»¿¡¼­ parameter¿¡ ÇØ´çÇÏ´Â ID¿Í Password¸¦ °¡Áø account°¡ ÀÖ´ÂÁö È®ÀÎ ÈÄ ·Î±×ÀÎ
-// Parameter : string ID - È¸¿ø ¾ÆÀÌµğ, string password - È¸¿ø ºñ¹Ğ¹øÈ£
+// Description : AccountDBë‚´ì—ì„œ parameterì— í•´ë‹¹í•˜ëŠ” IDì™€ Passwordë¥¼ ê°€ì§„ accountê°€ ìˆëŠ”ì§€ í™•ì¸ í›„ ë¡œê·¸ì¸
+// Parameter : string ID - íšŒì› ì•„ì´ë””, string password - íšŒì› ë¹„ë°€ë²ˆí˜¸
 // Return Value : void
-// Author: ±è¾ÆÇö
+// Author: ê¹€ì•„í˜„
 
 void AccountDB::logIn(string ID, string password)
 {
@@ -386,10 +388,10 @@ void AccountDB::logIn(string ID, string password)
 }
 
 // Function : void AccountDB::logOut(string ID, string password)
-// Description : AccountDB³»¿¡¼­ parameter¿¡ ÇØ´çÇÏ´Â ID¿Í Password¸¦ °¡Áø account°¡ ÀÖ´ÂÁö È®ÀÎ ÈÄ ·Î±×¾Æ¿ô
-// Parameter : string ID - È¸¿ø ¾ÆÀÌµğ, string password - È¸¿ø ºñ¹Ğ¹øÈ£
+// Description : AccountDBë‚´ì—ì„œ parameterì— í•´ë‹¹í•˜ëŠ” IDì™€ Passwordë¥¼ ê°€ì§„ accountê°€ ìˆëŠ”ì§€ í™•ì¸ í›„ ë¡œê·¸ì•„ì›ƒ
+// Parameter : string ID - íšŒì› ì•„ì´ë””, string password - íšŒì› ë¹„ë°€ë²ˆí˜¸
 // Return Value : void
-// Author: ±è¾ÆÇö
+// Author: ê¹€ì•„í˜„
 
 void AccountDB::logOut(string ID)
 {
@@ -398,7 +400,7 @@ void AccountDB::logOut(string ID)
 
 }
  
-// È¸¿ø°¡ÀÔ ¹Ù¿î´õ¸® Å¬·¡½º »ı¼ºÀÚ
+// íšŒì›ê°€ì… ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤ ìƒì„±ì
 
 CreateAccountUI::CreateAccountUI(CreateAccount* createAccount)
 {
@@ -406,9 +408,9 @@ CreateAccountUI::CreateAccountUI(CreateAccount* createAccount)
 }
 
 // Function :void CreateAccountUI::enterAccountInfo()
-// Description : È¸¿ø°¡ÀÔ ¹Ù¿î´õ¸®¿¡¼­ °èÁ¤ Á¤º¸¸¦ ÀÔ·ÂÇÏ´Â ÇÔ¼ö
+// Description : íšŒì›ê°€ì… ë°”ìš´ë”ë¦¬ì—ì„œ ê³„ì • ì •ë³´ë¥¼ ì…ë ¥í•˜ëŠ” í•¨ìˆ˜
 // Return Value : void
-// Author: ±è¾ÆÇö
+// Author: ê¹€ì•„í˜„
 
 void CreateAccountUI::enterAccountInfo()
 {
@@ -421,16 +423,16 @@ void CreateAccountUI::enterAccountInfo()
 }
 
 // Function : void CreateAccountUI::printResult(string name, string ssn, string ID, string password) 
-// Description : È¸¿ø°¡ÀÔ ¹Ù¿î´õ¸®¿¡¼­ °èÁ¤ »ı¼º ÈÄ °á°ú·Î ÇØ´ç °èÁ¤ÀÇ Á¤º¸¸¦ Ãâ·ÂÇÏ´Â ÇÔ¼ö
-// Parameter : string name - È¸¿ø °èÁ¤ ÀÌ¸§, string ssn - È¸¿ø ÁÖ¹Î¹øÈ£ , string ID - È¸¿ø ¾ÆÀÌµğ, string password - È¸¿ø ºñ¹Ğ¹øÈ£
+// Description : íšŒì›ê°€ì… ë°”ìš´ë”ë¦¬ì—ì„œ ê³„ì • ìƒì„± í›„ ê²°ê³¼ë¡œ í•´ë‹¹ ê³„ì •ì˜ ì •ë³´ë¥¼ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜
+// Parameter : string name - íšŒì› ê³„ì • ì´ë¦„, string ssn - íšŒì› ì£¼ë¯¼ë²ˆí˜¸ , string ID - íšŒì› ì•„ì´ë””, string password - íšŒì› ë¹„ë°€ë²ˆí˜¸
 // Return Value : void
-// Author: Á¶Àººñ
+// Author: ì¡°ì€ë¹„
 
 void CreateAccountUI::printResult(string name, string ssn, string ID, string password) {
     fout << "> " << name << " " << ssn << " " << ID << " " << password << endl;
 }
 
-// È¸¿ø°¡ÀÔ ÄÁÆ®·Ñ Å¬·¡½º »ı¼ºÀÚ
+// íšŒì›ê°€ì… ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ ìƒì„±ì
 CreateAccount::CreateAccount(AccountDB* accountDB)
 {
     CreateAccountUI* createAccountUi = new CreateAccountUI(this);
@@ -440,11 +442,11 @@ CreateAccount::CreateAccount(AccountDB* accountDB)
 }
  
 // Function : void CreateAccount::createNewAccount(string name, string ssn, string id, string password) 
-// Description : È¸¿ø°¡ÀÔ ÄÁÆ®·Ñ¿¡¼­ AccountDB³»¿¡ °èÁ¤ÀÌ ¾ø´Ù¸é »õ °èÁ¤À» »ı¼ºÇØ ÀúÀåÇÏ°í ±× °á°ú¸¦ Ãâ·ÂÇÏ´Â ÇÔ¼ö
-// Parameter : string name - È¸¿ø °èÁ¤ ÀÌ¸§, string ssn - È¸¿ø ÁÖ¹Î¹øÈ£ , string ID - È¸¿ø ¾ÆÀÌµğ, string password - È¸¿ø ºñ¹Ğ¹øÈ£
+// Description : íšŒì›ê°€ì… ì»¨íŠ¸ë¡¤ì—ì„œ AccountDBë‚´ì— ê³„ì •ì´ ì—†ë‹¤ë©´ ìƒˆ ê³„ì •ì„ ìƒì„±í•´ ì €ì¥í•˜ê³  ê·¸ ê²°ê³¼ë¥¼ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜
+// Parameter : string name - íšŒì› ê³„ì • ì´ë¦„, string ssn - íšŒì› ì£¼ë¯¼ë²ˆí˜¸ , string ID - íšŒì› ì•„ì´ë””, string password - íšŒì› ë¹„ë°€ë²ˆí˜¸
 // Return Value : void
-// Author: ±è¾ÆÇö
-// // Revsions : Á¶Àººñ
+// Author: ê¹€ì•„í˜„
+// // Revsions : ì¡°ì€ë¹„
 
 void CreateAccount::createNewAccount(string name, string ssn, string id, string password)
 { 
@@ -457,29 +459,29 @@ void CreateAccount::createNewAccount(string name, string ssn, string id, string 
     }
 }
 
-// È¸¿øÅ»Åğ ¹Ù¿î´õ¸® Å¬·¡½º »ı¼ºÀÚ
+// íšŒì›íƒˆí‡´ ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤ ìƒì„±ì
 DeleteAccountUI::DeleteAccountUI(DeleteAccount* deleteAccount)
 {
     this->deleteAccount = deleteAccount;
 }
 
 
-/// È¸¿øÅ»Åğ ÄÁÆ®·Ñ Å¬·¡½º »ı¼ºÀÚ
+/// íšŒì›íƒˆí‡´ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ ìƒì„±ì
 DeleteAccount::DeleteAccount(AccountDB* accountDB, Account* loginPointer)
 {
     DeleteAccountUI* deleteAccountUi = new DeleteAccountUI(this);
     this->deleteAccountUi = deleteAccountUi;
     this->accountDB = accountDB;
-    this->loginPointer = loginPointer; //·Î±×ÀÎÇÑ °èÁ¤À» °¡¸®Å°´Â Æ÷ÀÎÅÍ
+    this->loginPointer = loginPointer; //ë¡œê·¸ì¸í•œ ê³„ì •ì„ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„°
     this->deleteAccountUi->enterDeleteInfo(loginPointer);
 }
 
 
 // Function : void DeleteAccountUI::enterDeleteInfo(Account* loginPointer)
-// Description : È¸¿øÅ»Åğ »èÁ¦ÇÒ °èÁ¤ÀÇ ID¸¦ ÀÔ·Â¹Ş´Â ÇÔ¼ö
-// Parameter : Account* loginPointer - ·Î±×ÀÎÇÑ È¸¿øÀ» °¡¸®Å°´Â Æ÷ÀÎÅÍ
+// Description : íšŒì›íƒˆí‡´ ì‚­ì œí•  ê³„ì •ì˜ IDë¥¼ ì…ë ¥ë°›ëŠ” í•¨ìˆ˜
+// Parameter : Account* loginPointer - ë¡œê·¸ì¸í•œ íšŒì›ì„ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„°
 // Return Value : void
-// Author: ±è¾ÆÇö
+// Author: ê¹€ì•„í˜„
 
 void DeleteAccountUI::enterDeleteInfo(Account* loginPointer)
 {
@@ -488,10 +490,10 @@ void DeleteAccountUI::enterDeleteInfo(Account* loginPointer)
 
 
 //Function: void DeleteAccount::deleteThisAccount(Account* loginPointer)
-//Description: ·Î±×ÀÎÇß´ø È¸¿øÀ» ´ë»óÀ¸·Î AccountDB·Î ºÎÅÍ ÇØ´ç È¸¿øÀÇ °èÁ¤À» »èÁ¦ÇÏ´Â ÇÔ¼ö
-//Parameter : Account* loginPointer - ·Î±×ÀÎÇÑ È¸¿øÀ» °¡¸®Å°´Â Æ÷ÀÎÅÍ
+//Description: ë¡œê·¸ì¸í–ˆë˜ íšŒì›ì„ ëŒ€ìƒìœ¼ë¡œ AccountDBë¡œ ë¶€í„° í•´ë‹¹ íšŒì›ì˜ ê³„ì •ì„ ì‚­ì œí•˜ëŠ” í•¨ìˆ˜
+//Parameter : Account* loginPointer - ë¡œê·¸ì¸í•œ íšŒì›ì„ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„°
 //Return Value : void
-//Author: ±è¾ÆÇö
+//Author: ê¹€ì•„í˜„
 
 void DeleteAccount::deleteThisAccount(Account* loginPointer)
 {
@@ -500,26 +502,26 @@ void DeleteAccount::deleteThisAccount(Account* loginPointer)
 }
 
 // Function : void DeleteAccountUI::printResult(string id)
-// Description : È¸¿øÅ»Åğ ¹Ù¿î´õ¸®¿¡¼­ °èÁ¤ »èÁ¦ ÈÄ °á°ú·Î ÇØ´ç °èÁ¤ÀÇ Á¤º¸¸¦ Ãâ·ÂÇÏ´Â ÇÔ¼ö
-// Parameter : string ID - È¸¿ø ¾ÆÀÌµğ
+// Description : íšŒì›íƒˆí‡´ ë°”ìš´ë”ë¦¬ì—ì„œ ê³„ì • ì‚­ì œ í›„ ê²°ê³¼ë¡œ í•´ë‹¹ ê³„ì •ì˜ ì •ë³´ë¥¼ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜
+// Parameter : string ID - íšŒì› ì•„ì´ë””
 // Return Value : void
-// Author: ±è¾ÆÇö
+// Author: ê¹€ì•„í˜„
 
 void DeleteAccountUI::printResult(string id) {
     fout << "> " << id << endl;
 }
 
-// ·Î±×ÀÎ ¹Ù¿î´õ¸® Å¬·¡½º »ı¼ºÀÚ
+// ë¡œê·¸ì¸ ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤ ìƒì„±ì
 LoginUI::LoginUI(Login* login) {
     this->login = login;
 }
 
 // Function : void LoginUI::enterLoginInfo()
-// Description : ·Î±×ÀÎ ¹Ù¿î´õ¸®°¡ ·Î±×ÀÎ ÇÒ °èÁ¤ÀÇ ID¿Í password Á¤º¸¸¦ ÀÔ·Â¹Ş´Â ÇÔ¼ö
-// Parameter : string id - »èÁ¦ÇÒ È¸¿ø id
+// Description : ë¡œê·¸ì¸ ë°”ìš´ë”ë¦¬ê°€ ë¡œê·¸ì¸ í•  ê³„ì •ì˜ IDì™€ password ì •ë³´ë¥¼ ì…ë ¥ë°›ëŠ” í•¨ìˆ˜
+// Parameter : string id - ì‚­ì œí•  íšŒì› id
 // Return Value : void
-// Author: ±è¾ÆÇö
-// // Revsions : Á¶Àººñ
+// Author: ê¹€ì•„í˜„
+// // Revsions : ì¡°ì€ë¹„
 
 void LoginUI::enterLoginInfo() {
     string id;
@@ -530,10 +532,10 @@ void LoginUI::enterLoginInfo() {
 }
 
 // Function : void LoginUI::printResult(string id, string password)
-// Description : ·Î±×ÀÎ ¹Ù¿î´õ¸®¿¡¼­ ·Î±×ÀÎ ÈÄ ÇØ´ç °èÁ¤ÀÇ Á¤º¸¸¦ Ãâ·ÂÇÏ´Â ÇÔ¼ö
-// Parameter : string id - È¸¿ø ¾ÆÀÌµğ, string password - È¸¿ø ¾ÆÀÌµğ ºñ¹Ğ¹øÈ£)
+// Description : ë¡œê·¸ì¸ ë°”ìš´ë”ë¦¬ì—ì„œ ë¡œê·¸ì¸ í›„ í•´ë‹¹ ê³„ì •ì˜ ì •ë³´ë¥¼ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜
+// Parameter : string id - íšŒì› ì•„ì´ë””, string password - íšŒì› ì•„ì´ë”” ë¹„ë°€ë²ˆí˜¸)
 // Return Value : void
-// Author: ±è¾ÆÇö
+// Author: ê¹€ì•„í˜„
 
 void LoginUI::printResult(string id, string password)
 {
@@ -541,7 +543,7 @@ void LoginUI::printResult(string id, string password)
 }
 
 
-// ·Î±×ÀÎ ÄÁÆ®·Ñ Å¬·¡½º »ı¼ºÀÚ
+// ë¡œê·¸ì¸ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ ìƒì„±ì
 Login::Login(AccountDB* accountDB)
 {
     LoginUI* loginUi = new LoginUI(this);
@@ -552,11 +554,11 @@ Login::Login(AccountDB* accountDB)
 }
 
 // Function : void Login::requestLogin(string id, string password)
-// Description : ·Î±×ÀÎ ÄÁÆ®·Ñ¿¡¼­ ·Î±×ÀÎÀ» ¿äÃ»ÇÏ´Â ÇÔ¼ö
-// Parameter : string id - ·Î±×ÀÎÇÒ id, string password - ·Î±×ÀÎÇÒ idÀÇ ºñ¹Ğ¹øÈ£
+// Description : ë¡œê·¸ì¸ ì»¨íŠ¸ë¡¤ì—ì„œ ë¡œê·¸ì¸ì„ ìš”ì²­í•˜ëŠ” í•¨ìˆ˜
+// Parameter : string id - ë¡œê·¸ì¸í•  id, string password - ë¡œê·¸ì¸í•  idì˜ ë¹„ë°€ë²ˆí˜¸
 // Return Value : void
-// Author: ±è¾ÆÇö
-// // Revsions : Á¶Àººñ
+// Author: ê¹€ì•„í˜„
+// // Revsions : ì¡°ì€ë¹„
 
 void Login::requestLogin(string id, string password)
 {
@@ -570,16 +572,16 @@ void Login::requestLogin(string id, string password)
     }
 } 
 
-// ·Î±×¾Æ¿ô ¹Ù¿î´õ¸® Å¬·¡½º »ı¼ºÀÚ
+// ë¡œê·¸ì•„ì›ƒ ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤ ìƒì„±ì
 LogOutUI::LogOutUI(LogOut* logOut) {
     this->logOut = logOut;
 }
 
 // Function : void LogOutUI::enterLogOutInfo()
-// Description : ·Î±×¾Æ¿ô ¹Ù¿î´õ¸®¿¡ ·Î±×¾Æ¿ô Á¤º¸¸¦ ¿äÃ»ÇÏ´Â ÇÔ¼ö 
+// Description : ë¡œê·¸ì•„ì›ƒ ë°”ìš´ë”ë¦¬ì— ë¡œê·¸ì•„ì›ƒ ì •ë³´ë¥¼ ìš”ì²­í•˜ëŠ” í•¨ìˆ˜ 
 // Return Value : void
-// Author: ±è¾ÆÇö
-// // Revsions : Á¶Àººñ 
+// Author: ê¹€ì•„í˜„
+// // Revsions : ì¡°ì€ë¹„ 
 
 void LogOutUI::enterLogOutInfo() 
 { 
@@ -587,30 +589,30 @@ void LogOutUI::enterLogOutInfo()
 }
 
 // Function : void LogOutUI::printResult(Account* account)
-// Description : ·Î±×¾Æ¿ô ¹Ù¿î´õ¸®¿¡¼­ ·Î±×¾Æ¿ô ÈÄ °á°ú·Î ÇØ´ç °èÁ¤ÀÇ Á¤º¸¸¦ Ãâ·ÂÇÏ´Â ÇÔ¼ö
+// Description : ë¡œê·¸ì•„ì›ƒ ë°”ìš´ë”ë¦¬ì—ì„œ ë¡œê·¸ì•„ì›ƒ í›„ ê²°ê³¼ë¡œ í•´ë‹¹ ê³„ì •ì˜ ì •ë³´ë¥¼ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜
 // Parameter :
 // Return Value : void
-// Author: ±è¾ÆÇö
+// Author: ê¹€ì•„í˜„
 
 void LogOutUI::printResult(string ID) {
     fout << "> " << ID << endl;
 }
 
-// ·Î±×¾Æ¿ô ÄÁÆ®·Ñ Å¬·¡½º »ı¼ºÀÚ
+// ë¡œê·¸ì•„ì›ƒ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ ìƒì„±ì
 LogOut::LogOut(AccountDB* accountDB, Account* loginPointer)
 {
     LogOutUI* logOutUi = new LogOutUI(this);
     this->logOutUi = logOutUi;
     this->accountDB = accountDB;
-    this->logOutPointer = loginPointer; //·Î±×ÀÎÇÑ °èÁ¤À» °¡¸®Å°´Â Æ÷ÀÎÅÍ
+    this->logOutPointer = loginPointer; //ë¡œê·¸ì¸í•œ ê³„ì •ì„ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„°
     this->logOutUi->enterLogOutInfo();
 }
 
 // Function : void LogOut::requestLogOut()
-// Description : ·Î±×¾Æ¿ô ÄÁÆ®·Ñ¿¡¼­ accountDB·Î ÇØ´ç °èÁ¤ÀÇ ·Î±×¾Æ¿ôÀ» ¿äÃ»ÇÏ´Â ÇÔ¼ö 
+// Description : ë¡œê·¸ì•„ì›ƒ ì»¨íŠ¸ë¡¤ì—ì„œ accountDBë¡œ í•´ë‹¹ ê³„ì •ì˜ ë¡œê·¸ì•„ì›ƒì„ ìš”ì²­í•˜ëŠ” í•¨ìˆ˜ 
 // Return Value : void
-// Author: ±è¾ÆÇö
-// // Revsions : Á¶Àººñ 
+// Author: ê¹€ì•„í˜„
+// // Revsions : ì¡°ì€ë¹„ 
 
 void LogOut::requestLogOut()
 {
@@ -618,7 +620,7 @@ void LogOut::requestLogOut()
     /*if (this->accountDB->getAccountIndex(id)->getLogStatus())
     {
         this->accountDB->logOut(id);
-        fout << "2.2. ·Î±×¾Æ¿ô" << endl << "> " << id << endl;
+        fout << "2.2. ë¡œê·¸ì•„ì›ƒ" << endl << "> " << id << endl;
     }*/
     this->accountDB->logOut(this->logOutPointer->getID());
     fout << "> " << this->logOutPointer->getID() << endl;
@@ -641,7 +643,7 @@ void PrintStatisticsUI::outputList() {
         product = list.getProduct(i);
         fout << product->getProductName();
         fout << " ";
-        fout << product->getPrice() * product->getOriginalStockNum();  //Á¦Ç°´Ü°¡¿Í ÆÇÆĞµÈ ÃÑ Àç°í¸¦ °öÇÏ¿© ÃÑÆÇ¸Å¾×À» ±¸ÇÑ´Ù.
+        fout << product->getPrice() * product->getOriginalStockNum();  //ì œí’ˆë‹¨ê°€ì™€ íŒíŒ¨ëœ ì´ ì¬ê³ ë¥¼ ê³±í•˜ì—¬ ì´íŒë§¤ì•¡ì„ êµ¬í•œë‹¤.
         fout << " ";
         unsigned int order = 0;
         int sum = 0;
@@ -654,7 +656,7 @@ void PrintStatisticsUI::outputList() {
         if (sum != 0) {
             average = round(sum / (float)(order + 1));
         }
-        fout << average; //Æò±Õ±¸¸Å¸¸Á·µµ
+        fout << average; //í‰ê· êµ¬ë§¤ë§Œì¡±ë„
         fout << " " << endl;
     }
 }
@@ -715,7 +717,7 @@ void CheckPrdouctInfoSoldUI::outputList() {
         if (sum != 0) {
             average = round(sum / (float)(order + 1));
         }
-        fout << average; //Æò±Õ±¸¸Å¸¸Á·µµ
+        fout << average; //í‰ê· êµ¬ë§¤ë§Œì¡±ë„
         fout << " " << endl;
     }
 }
@@ -786,9 +788,9 @@ void AddClothesUI::output(Seller* seller) {
 
     /*fout << seller->listProduct_OnSale().getProduct->getProductName();
     fout << " ";
-    fout << seller->listProduct_OnSale().back()->getProductCompanyName();  //Á¦Ç°´Ü°¡¿Í ÆÇÆĞµÈ ÃÑ Àç°í¸¦ °öÇÏ¿© ÃÑÆÇ¸Å¾×À» ±¸ÇÑ´Ù.
+    fout << seller->listProduct_OnSale().back()->getProductCompanyName();  //ì œí’ˆë‹¨ê°€ì™€ íŒíŒ¨ëœ ì´ ì¬ê³ ë¥¼ ê³±í•˜ì—¬ ì´íŒë§¤ì•¡ì„ êµ¬í•œë‹¤.
     fout << " ";
-    fout << seller->listProductOnSale().back()->getPorfit(); //Æò±Õ±¸¸Å¸¸Á·µµ
+    fout << seller->listProductOnSale().back()->getPorfit(); //í‰ê· êµ¬ë§¤ë§Œì¡±ë„
     fout << " " << seller->listProductOnSale().back()->getStockNum() << endl;
     
 }
@@ -816,7 +818,7 @@ Product::Product(string productName, string productCompanyName, int price, int s
     this->productCompanyName = productCompanyName;
     this->price = price;
     this->stockNum = stockNum;
-    originalStockNum = stockNum; //ÃÊ±âÀç°í·® 
+    originalStockNum = stockNum; //ì´ˆê¸°ì¬ê³ ëŸ‰ 
 }
 */
 
@@ -835,7 +837,7 @@ void PrintStatisticsUI::outputList() {
         fout << " ";
         fout << list[i]->getProductName();
         fout << " ";
-        fout << list[i]->getPrice() * list[i]->getOriginalStockNum();  //Á¦Ç°´Ü°¡¿Í ÆÇÆĞµÈ ÃÑ Àç°í¸¦ °öÇÏ¿© ÃÑÆÇ¸Å¾×À» ±¸ÇÑ´Ù.
+        fout << list[i]->getPrice() * list[i]->getOriginalStockNum();  //ì œí’ˆë‹¨ê°€ì™€ íŒíŒ¨ëœ ì´ ì¬ê³ ë¥¼ ê³±í•˜ì—¬ ì´íŒë§¤ì•¡ì„ êµ¬í•œë‹¤.
         fout << " ";
         unsigned int order = 0;
         int sum = 0;
@@ -848,7 +850,7 @@ void PrintStatisticsUI::outputList() {
         if (sum != 0) {
             average = round(sum / (float)order);
         }
-        fout << average; //Æò±Õ±¸¸Å¸¸Á·µµ
+        fout << average; //í‰ê· êµ¬ë§¤ë§Œì¡±ë„
         fout << " " << endl;
     }
 }
@@ -893,7 +895,7 @@ void CheckPrdouctInfoSoldUI::outputList() {
         productNames.push_back(list[i]->getProductName());
         i++;
     }
-    sort(productNames.begin(), productNames.end()); // Á¤·Ä
+    sort(productNames.begin(), productNames.end()); // ì •ë ¬
     i = 0;
     while (i < productNames.size()) {
         unsigned j = 0;
@@ -936,7 +938,7 @@ void CheckPrdouctInfoSoldUI::outputList() {
         fout << " ";
         fout << list[i]->getStockNum();
         fout << " ";
-        fout << list[i]->getSatisfacation(); //Æò±Õ±¸¸Å¸¸Á·µµ
+        fout << list[i]->getSatisfacation(); //í‰ê· êµ¬ë§¤ë§Œì¡±ë„
         fout << " " << endl;
     }*/
 }
@@ -1005,9 +1007,9 @@ void AddClothesUI::output(string productName, string productCompanyName, int pri
     fout << "> ";
     fout << productName;
     fout << " ";
-    fout << productCompanyName;  //Á¦Ç°´Ü°¡¿Í ÆÇÆĞµÈ ÃÑ Àç°í¸¦ °öÇÏ¿© ÃÑÆÇ¸Å¾×À» ±¸ÇÑ´Ù.
+    fout << productCompanyName;  //ì œí’ˆë‹¨ê°€ì™€ íŒíŒ¨ëœ ì´ ì¬ê³ ë¥¼ ê³±í•˜ì—¬ ì´íŒë§¤ì•¡ì„ êµ¬í•œë‹¤.
     fout << " ";
-    fout << price; //Æò±Õ±¸¸Å¸¸Á·µµ
+    fout << price; //í‰ê· êµ¬ë§¤ë§Œì¡±ë„
     fout << " " << stockNum << endl;
 
 }
@@ -1027,7 +1029,7 @@ void AddClothes::addNewClothes(string productName, string productCompanyName, in
 }
 void Seller::addNewClothes(string productName, string productCompanyName, int price, int stockNum) {
     Product* newProduct = new Product(productName, productCompanyName, price, stockNum);
-    this->product.addProduct(newProduct);  //product collection class¿¡
+    this->product.addProduct(newProduct);  //product collection classì—
 }
 void ProductCollection::addProduct(Product* product) {
     this->product.push_back(product);
@@ -1038,21 +1040,21 @@ Product::Product(string productName, string productCompanyName, int price, int s
     this->productCompanyName = productCompanyName;
     this->price = price;
     this->stockNum = stockNum;
-    originalStockNum = stockNum; //ÃÊ±âÀç°í·® 
+    originalStockNum = stockNum; //ì´ˆê¸°ì¬ê³ ëŸ‰ 
 }
 vector<Product*> ProductCollection::getProductlist()
 {
     return product;
 }
 
-//»óÇ° °Ë»ö ¹Ù¿î´õ¸® Å¬·¡½º »ı¼ºÀÚ
+//ìƒí’ˆ ê²€ìƒ‰ ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤ ìƒì„±ì
 SearchProductUI::SearchProductUI(SearchProduct* searchProduct) {
     this->searchProduct = searchProduct;
 }
 
 //Function: void SearchProductUI::enterProductName()
-//Description: ÀÔ·Â ÆÄÀÏ¿¡¼­ »óÇ°¸íÀ» ÀĞ¾îµéÀÌ°í ÀÌ »óÇ°¸íÀ» »óÇ° °Ë»ö ÄÁÆ®·Ñ °´Ã¼ÀÇ »óÇ° °Ë»öÀ» ¼öÇàÇÏ´Â ÇÔ¼ö¿¡ ÀÎÀÚ·Î ³Ö°í È£ÃâÇÑ´Ù.
-//Author: Á¶Àººñ
+//Description: ì…ë ¥ íŒŒì¼ì—ì„œ ìƒí’ˆëª…ì„ ì½ì–´ë“¤ì´ê³  ì´ ìƒí’ˆëª…ì„ ìƒí’ˆ ê²€ìƒ‰ ì»¨íŠ¸ë¡¤ ê°ì²´ì˜ ìƒí’ˆ ê²€ìƒ‰ì„ ìˆ˜í–‰í•˜ëŠ” í•¨ìˆ˜ì— ì¸ìë¡œ ë„£ê³  í˜¸ì¶œí•œë‹¤.
+//Author: ì¡°ì€ë¹„
 void SearchProductUI::enterProductName() {
     string productName;
     fin >> productName;
@@ -1060,16 +1062,16 @@ void SearchProductUI::enterProductName() {
 }
 
 //Function: void SearchProductUI::printResult(string sellerID, string productName, string productCompanyName, int price, int stockNum, float averageSatisfaction)
-//Description: »óÇ° °Ë»ö °á°ú¸¦ Ãâ·Â ÆÄÀÏ¿¡ ¾´´Ù.
-//Parameter : string sellerID - ÆÇ¸ÅÀÚID, string producName - »óÇ°¸í, string productComapanyName - »óÇ°È¸»ç¸í, 
-//int price - »óÇ° °¡°İ, int stockNum - »óÇ° Àç°í, int averageSatisfaction - Æò±Õ ±¸¸Å¸¸Á·µµ
-//Author: Á¶Àººñ
+//Description: ìƒí’ˆ ê²€ìƒ‰ ê²°ê³¼ë¥¼ ì¶œë ¥ íŒŒì¼ì— ì“´ë‹¤.
+//Parameter : string sellerID - íŒë§¤ìID, string producName - ìƒí’ˆëª…, string productComapanyName - ìƒí’ˆíšŒì‚¬ëª…, 
+//int price - ìƒí’ˆ ê°€ê²©, int stockNum - ìƒí’ˆ ì¬ê³ , int averageSatisfaction - í‰ê·  êµ¬ë§¤ë§Œì¡±ë„
+//Author: ì¡°ì€ë¹„
 void SearchProductUI::printResult(string sellerID, string productName, string productCompanyName, int price, int stockNum, int averageSatisfaction) {
     
     fout << "> " << sellerID << " " << productName << " " << productCompanyName << " " << price << " " << stockNum << " " << averageSatisfaction << endl;
 }
 
-//»óÇ° °Ë»ö ÄÁÆ®·Ñ Å¬·¡½º »ı¼ºÀÚ
+//ìƒí’ˆ ê²€ìƒ‰ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ ìƒì„±ì
 SearchProduct::SearchProduct(vector<Seller*> sellerList) {
     SearchProductUI* searchProductUI = new SearchProductUI(this);
     this->searchProductUI = searchProductUI;
@@ -1080,16 +1082,16 @@ SearchProduct::SearchProduct(vector<Seller*> sellerList) {
 }
 
 //Function: void SearchProduct::showSearchProductInfo(string name)
-//Description: »óÇ° °Ë»öÀ» ¼öÇàÇÏ°í ±× °á°ú¸¦ ÀÎÀÚ·Î Àü´ŞÇÏ¿© »óÇ° °Ë»ö ¹Ù¿î´õ¸®ÀÇ printResult ÇÔ¼ö¸¦ È£ÃâÇÑ´Ù.
-//Parameter : string productName - »óÇ°¸í
-//Author: Á¶Àººñ
+//Description: ìƒí’ˆ ê²€ìƒ‰ì„ ìˆ˜í–‰í•˜ê³  ê·¸ ê²°ê³¼ë¥¼ ì¸ìë¡œ ì „ë‹¬í•˜ì—¬ ìƒí’ˆ ê²€ìƒ‰ ë°”ìš´ë”ë¦¬ì˜ printResult í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•œë‹¤.
+//Parameter : string productName - ìƒí’ˆëª…
+//Author: ì¡°ì€ë¹„
 void SearchProduct::showSearchProductInfo(string productName) {
     bool find = false;
     unsigned int i = 0;
     vector<Product*> saleProducts;
     Product* product = 0;
     while (i < listSeller.size()) {
-        saleProducts = listSeller[i]->listProduct_OnSale(); // ÆÇ¸ÅÁßÀÎ ¸®½ºÆ® °¡Á®¿È
+        saleProducts = listSeller[i]->listProduct_OnSale(); // íŒë§¤ì¤‘ì¸ ë¦¬ìŠ¤íŠ¸ ê°€ì ¸ì˜´
         unsigned int j = 0;
         while (j < saleProducts.size()) {
             if (productName == saleProducts[j]->getProductName()) {
@@ -1123,35 +1125,35 @@ void SearchProduct::showSearchProductInfo(string productName) {
 }
 
 //Function: Seller* SearchProduct::getSearchProductSeller()
-//Description: °Ë»öÇÑ »óÇ°ÀÇ ÆÇ¸ÅÀÚ¸¦ °¡¸®Å°´Â Æ÷ÀÎÅÍ¸¦ ¹İÈ¯ÇÑ´Ù.
+//Description: ê²€ìƒ‰í•œ ìƒí’ˆì˜ íŒë§¤ìë¥¼ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„°ë¥¼ ë°˜í™˜í•œë‹¤.
 //Return Value : Seller*
-//Author: Á¶Àººñ
+//Author: ì¡°ì€ë¹„
 Seller* SearchProduct::getSearchProductSeller() {
     return this->searchProductSeller;
 }
 
 //Function: Product* SearchProduct::getSearchProduct()
-//Description: °Ë»öÇÑ »óÇ°À» °¡¸®Å°´Â Æ÷ÀÎÅÍ¸¦ ¹İÈ¯ÇÑ´Ù.
+//Description: ê²€ìƒ‰í•œ ìƒí’ˆì„ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„°ë¥¼ ë°˜í™˜í•œë‹¤.
 //Return Value : Product*
-//Author: Á¶Àººñ
+//Author: ì¡°ì€ë¹„
 Product* SearchProduct::getSearchProduct() {
     return this->searchProduct;
 }
 
-//»óÇ° ±¸¸Å ¹Ù¿î´õ¸® Å¬·¡½º »ı¼ºÀÚ
+//ìƒí’ˆ êµ¬ë§¤ ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤ ìƒì„±ì
 BuyProductUI::BuyProductUI(BuyProduct* buyProduct) {
     this->buyProduct = buyProduct;
 }
 
 //Function: void BuyProductUI::printResult(string sellerID, string productName)
-//Description: »óÇ° ±¸¸Å °á°ú¸¦ Ãâ·ÂÇÑ´Ù.
-//Parameter : string sellerID - ±¸¸ÅÇÑ »óÇ°ÀÇ ÆÇ¸ÅÀÚ ID, string productName - ±¸¸ÅÇÑ »óÇ°¸í
-//Author: Á¶Àººñ
+//Description: ìƒí’ˆ êµ¬ë§¤ ê²°ê³¼ë¥¼ ì¶œë ¥í•œë‹¤.
+//Parameter : string sellerID - êµ¬ë§¤í•œ ìƒí’ˆì˜ íŒë§¤ì ID, string productName - êµ¬ë§¤í•œ ìƒí’ˆëª…
+//Author: ì¡°ì€ë¹„
 void BuyProductUI::printResult(string sellerID, string productName) {
     fout << "> " << sellerID << " " << productName << endl;
 }
 
-//»óÇ° ±¸¸Å ÄÁÆ®·Ñ Å¬·¡½º »ı¼ºÀÚ
+//ìƒí’ˆ êµ¬ë§¤ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ ìƒì„±ì
 BuyProduct::BuyProduct(Buyer* buyer, Seller* searchProductSeller, Product* searchProduct) {
     BuyProductUI *buyProductUI = new BuyProductUI(this);
     this->buyProductUI = buyProductUI;
@@ -1165,21 +1167,21 @@ BuyProduct::BuyProduct(Buyer* buyer, Seller* searchProductSeller, Product* searc
     }
 }
 
-//±¸¸Å ³»¿ª Á¶È¸ ¹Ù¿î´õ¸® Å¬·¡½º »ı¼ºÀÚ
+//êµ¬ë§¤ ë‚´ì—­ ì¡°íšŒ ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤ ìƒì„±ì
 SeeBoughtListUI::SeeBoughtListUI(SeeBoughtList* seeBoughtList) {
     this->seeBoughtList = seeBoughtList;
 }
 
 //Function: void SeeBoughtListUI::printResult(string sellerID, string productName, string productCompanyName, int price, int stockNum, int averageSatisfaction)
-//Description: ±¸¸Å ³»¿ª Á¶È¸ °á°ú¸¦ Ãâ·ÂÇÑ´Ù.
-//Parameter : string sellerID - ÆÇ¸ÅÀÚID, string producName - »óÇ°¸í, string productComapanyName - »óÇ°È¸»ç¸í, 
-//int price - »óÇ° °¡°İ, int stockNum - »óÇ° Àç°í, int averageSatisfaction - Æò±Õ ±¸¸Å¸¸Á·µµ
-//Author: Á¶Àººñ
+//Description: êµ¬ë§¤ ë‚´ì—­ ì¡°íšŒ ê²°ê³¼ë¥¼ ì¶œë ¥í•œë‹¤.
+//Parameter : string sellerID - íŒë§¤ìID, string producName - ìƒí’ˆëª…, string productComapanyName - ìƒí’ˆíšŒì‚¬ëª…, 
+//int price - ìƒí’ˆ ê°€ê²©, int stockNum - ìƒí’ˆ ì¬ê³ , int averageSatisfaction - í‰ê·  êµ¬ë§¤ë§Œì¡±ë„
+//Author: ì¡°ì€ë¹„
 void SeeBoughtListUI::printResult(string sellerID, string productName, string productCompanyName, int price, int stockNum, int averageSatisfaction) {
     fout << "> " << sellerID << " " << productName << " " << productCompanyName << " " << price << " " << stockNum << " " << averageSatisfaction << endl;
 }
 
-//±¸¸Å ³»¿ª Á¶È¸ ÄÁÆ®·Ñ Å¬·¡½º »ı¼ºÀÚ
+//êµ¬ë§¤ ë‚´ì—­ ì¡°íšŒ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ ìƒì„±ì
 SeeBoughtList::SeeBoughtList(Buyer* buyer, vector<Seller*> sellerList) {
     SeeBoughtListUI *seeBoughtListUI = new SeeBoughtListUI(this);
     this->seeBoughtListUI = seeBoughtListUI;
@@ -1189,8 +1191,8 @@ SeeBoughtList::SeeBoughtList(Buyer* buyer, vector<Seller*> sellerList) {
 }
 
 //Function: void SeeBoughtList::showBoughtListInfo()
-//Description: ±¸¸Å ³»¿ªÀ» »óÇ°¸íÀ» ±âÁØÀ¸·Î ¿À¸§Â÷¼øÀ¸·Î Á¤·ÄÇÏ°í Á¶È¸µÈ Á¤º¸¸¦ ¹Ù¿î´õ¸® printResult ÇÔ¼ö¿¡ ÀÎÀÚ·Î ³Ö¾î È£ÃâÇÑ´Ù.
-//Author: Á¶Àººñ
+//Description: êµ¬ë§¤ ë‚´ì—­ì„ ìƒí’ˆëª…ì„ ê¸°ì¤€ìœ¼ë¡œ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬í•˜ê³  ì¡°íšŒëœ ì •ë³´ë¥¼ ë°”ìš´ë”ë¦¬ printResult í•¨ìˆ˜ì— ì¸ìë¡œ ë„£ì–´ í˜¸ì¶œí•œë‹¤.
+//Author: ì¡°ì€ë¹„
 void SeeBoughtList::showBoughtListInfo() {
     bool find = false;
     unsigned int i = 0;
@@ -1220,7 +1222,7 @@ void SeeBoughtList::showBoughtListInfo() {
         
             if (!find) {
                 k = 0;
-                products = listSeller[j]->listProduct_OnSold(); // ÆÇ¸Å ¿Ï·áµÈ ¸ñ·Ï¿¡¼­ Ã£±â
+                products = listSeller[j]->listProduct_OnSold(); // íŒë§¤ ì™„ë£Œëœ ëª©ë¡ì—ì„œ ì°¾ê¸°
                 while (k < products.size()) {
                     if (sortedBoughtProductNames[i] == products[k]->getProductName()) {
                         find = true;
@@ -1233,8 +1235,8 @@ void SeeBoughtList::showBoughtListInfo() {
             else k = 0;
             j++;
         }
-        this->sellerID.push_back(listSeller[j]->getSellerID()); // Á¤·ÄµÈ ±âÁØ ±¸¸ÅÇÑ »óÇ°ÀÇ ÆÇ¸ÅÀÚ id ÀúÀå
-        product = this->buyer->listBoughtProducts().findProduct(sortedBoughtProductNames[i]); // Á¤·ÄµÈ »óÇ°¸í ±âÁØÀ¸·Î ±¸¸Å ³»¿ª¿¡¼­ ÇØ´ç »óÇ° Ã£±â
+        this->sellerID.push_back(listSeller[j]->getSellerID()); // ì •ë ¬ëœ ê¸°ì¤€ êµ¬ë§¤í•œ ìƒí’ˆì˜ íŒë§¤ì id ì €ì¥
+        product = this->buyer->listBoughtProducts().findProduct(sortedBoughtProductNames[i]); // ì •ë ¬ëœ ìƒí’ˆëª… ê¸°ì¤€ìœ¼ë¡œ êµ¬ë§¤ ë‚´ì—­ì—ì„œ í•´ë‹¹ ìƒí’ˆ ì°¾ê¸°
         unsigned int count = 0;
         int sum = 0;
         int average = 0;
@@ -1254,21 +1256,21 @@ void SeeBoughtList::showBoughtListInfo() {
 }
 
 //Function: vector<string> SeeBoughtList::getSellerIDList()
-//Description: ±¸¸Å ³»¿ªÀÇ ÆÇ¸ÅÀÚ ID ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+//Description: êµ¬ë§¤ ë‚´ì—­ì˜ íŒë§¤ì ID ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 //Return Value : vector<string>
-//Author: Á¶Àººñ
+//Author: ì¡°ì€ë¹„
 vector<string> SeeBoughtList::getSellerIDList() {
     return this->sellerID;
 }
 
-//±¸¸Å¸¸Á·µµ Æò°¡ ¹Ù¿î´õ¸® Å¬·¡½º »ı¼ºÀÚ
+//êµ¬ë§¤ë§Œì¡±ë„ í‰ê°€ ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤ ìƒì„±ì
 EvaluateBuySatisfactionUI::EvaluateBuySatisfactionUI(EvaluateBuySatisfaction* evaluateBuySatisfaction) {
     this->evaluateBuySatisfaction = evaluateBuySatisfaction;
 }
 
 //Function: void EvaluateBuySatisfactionUI::enterProductNameAndBuySatisfaction()
-//Description: ÀÔ·Â ÆÄÀÏ¿¡¼­ »óÇ°¸í°ú ±¸¸Å ¸¸Á·µµ °ªÀ» ÀĞ¾îµéÀÌ°í ÄÁÆ®·Ñ addSatisfactionÇÔ¼ö¿¡ ÀÎÀÚ·Î ³Ö¾î È£ÃâÇÑ´Ù.
-//Author: Á¶Àººñ
+//Description: ì…ë ¥ íŒŒì¼ì—ì„œ ìƒí’ˆëª…ê³¼ êµ¬ë§¤ ë§Œì¡±ë„ ê°’ì„ ì½ì–´ë“¤ì´ê³  ì»¨íŠ¸ë¡¤ addSatisfactioní•¨ìˆ˜ì— ì¸ìë¡œ ë„£ì–´ í˜¸ì¶œí•œë‹¤.
+//Author: ì¡°ì€ë¹„
 void EvaluateBuySatisfactionUI::enterProductNameAndBuySatisfaction() {
     string productName;
     int satisfaction;
@@ -1278,14 +1280,14 @@ void EvaluateBuySatisfactionUI::enterProductNameAndBuySatisfaction() {
 }
 
 //Function: void EvaluateBuySatisfactionUI::printResult(string sellerID, string productName, int satisfaction)
-//Description: ±¸¸Å ¸¸Á·µµ Æò°¡ °á°ú¸¦ Ãâ·ÂÆÄÀÏ¿¡ ¾´´Ù.
-//Parameter : string sellerID - ÆÇ¸ÅÀÚ ID, string productName - »óÇ°¸í, int satisfaction - Æò°¡ÇÑ ±¸¸Å ¸¸Á·µµ
-//Author: Á¶Àººñ
+//Description: êµ¬ë§¤ ë§Œì¡±ë„ í‰ê°€ ê²°ê³¼ë¥¼ ì¶œë ¥íŒŒì¼ì— ì“´ë‹¤.
+//Parameter : string sellerID - íŒë§¤ì ID, string productName - ìƒí’ˆëª…, int satisfaction - í‰ê°€í•œ êµ¬ë§¤ ë§Œì¡±ë„
+//Author: ì¡°ì€ë¹„
 void EvaluateBuySatisfactionUI::printResult(string sellerID, string productName, int satisfaction) {
     fout << "> " << sellerID << " " << productName << " " << satisfaction << endl;
 }
 
-//±¸¸Å¸¸Á·µµ Æò°¡ ÄÁÆ®·Ñ Å¬·¡½º »ı¼ºÀÚ
+//êµ¬ë§¤ë§Œì¡±ë„ í‰ê°€ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ ìƒì„±ì
 EvaluateBuySatisfaction::EvaluateBuySatisfaction(Buyer* buyer, vector<string> boughtListSellerID, vector<string> sortedBoughtListNames) {
     EvaluateBuySatisfactionUI *evaluateBuySatisfactionUI = new EvaluateBuySatisfactionUI(this);
     this->evaluateBuySatisfactionUI = evaluateBuySatisfactionUI;
@@ -1296,9 +1298,9 @@ EvaluateBuySatisfaction::EvaluateBuySatisfaction(Buyer* buyer, vector<string> bo
 }
 
 //Function: void EvaluateBuySatisfaction::addSatisfaction(string productName, int satisfaction)
-//Description: Æò°¡ÇÑ ±¸¸Å ¸¸Á·µµ¸¦ ÇØ´ç »óÇ°¿¡ Ãß°¡ÇÑ´Ù.
-//Parameter : string productName - »óÇ°¸í, int satisfaction - Æò°¡ÇÑ ±¸¸Å ¸¸Á·µµ
-//Author: Á¶Àººñ
+//Description: í‰ê°€í•œ êµ¬ë§¤ ë§Œì¡±ë„ë¥¼ í•´ë‹¹ ìƒí’ˆì— ì¶”ê°€í•œë‹¤.
+//Parameter : string productName - ìƒí’ˆëª…, int satisfaction - í‰ê°€í•œ êµ¬ë§¤ ë§Œì¡±ë„
+//Author: ì¡°ì€ë¹„
 void EvaluateBuySatisfaction::addSatisfaction(string productName, int satisfaction) {
     Product *product;
     product = this->buyer->listBoughtProducts().findProduct(productName);
@@ -1318,64 +1320,64 @@ void EvaluateBuySatisfaction::addSatisfaction(string productName, int satisfacti
 }
 
 //Function : string Seller::getSellerID()
-//Description: ÆÇ¸ÅÀÚ ID¸¦ ¹İÈ¯ÇÑ´Ù.
+//Description: íŒë§¤ì IDë¥¼ ë°˜í™˜í•œë‹¤.
 //Return Value : string
-//Author: Á¶Àººñ
+//Author: ì¡°ì€ë¹„
 string Seller::getSellerID() {
     return this->getID();
 }
 
 //Function : ProductCollection Buyer::listBoughtProducts()
-//Description: ±¸¸Å³»¿ªÀ» ¹İÈ¯ÇÑ´Ù.
+//Description: êµ¬ë§¤ë‚´ì—­ì„ ë°˜í™˜í•œë‹¤.
 //Return Value : ProductCollection
-//Author: Á¶Àººñ
+//Author: ì¡°ì€ë¹„
 ProductCollection Buyer::listBoughtProducts() {
     return this->boughtProductCollection;
 }
 
 //Function : void Buyer::addProductToBoughtList(Product* product)
-//Description: ±¸¸ÅÇÑ »óÇ°À» ±¸¸Å ³»¿ª¿¡ Ãß°¡ÇÑ´Ù.
-//Author: Á¶Àººñ
+//Description: êµ¬ë§¤í•œ ìƒí’ˆì„ êµ¬ë§¤ ë‚´ì—­ì— ì¶”ê°€í•œë‹¤.
+//Author: ì¡°ì€ë¹„
 void Buyer::addProductToBoughtList(Product* product) {
     this->boughtProductCollection.addProduct(product);
 }
 
 //Function : int Product::getPrice()
-//Description: »óÇ° °¡°İÀ» ¹İÈ¯ÇÑ´Ù.
+//Description: ìƒí’ˆ ê°€ê²©ì„ ë°˜í™˜í•œë‹¤.
 //Return Value : int
-//Author: Á¶Àººñ
+//Author: ì¡°ì€ë¹„
 int Product::getPrice() {
     return this->price;
 }
 
 //Function : vector<int> Product::getSatisfaction()
-//Description: ±¸¸Å ¸¸Á·µµ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+//Description: êµ¬ë§¤ ë§Œì¡±ë„ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 //Return Value : vector<int>
-//Author: Á¶Àººñ
+//Author: ì¡°ì€ë¹„
 vector<int> Product::getSatisfaction() {
     return this->buySatisfaction;
 }
 
 //Function : void Product::addBuySatisfaction(int satisfaction)
-//Description: Æò°¡¹ŞÀº ±¸¸Å ¸¸Á·µµ °ªÀ» ±âÁ¸ ±¸¸Å ¸¸Á·µµ ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù. 
-//Parameter : int satisfaction - ¸¸Á·µµ
-//Author: Á¶Àººñ
+//Description: í‰ê°€ë°›ì€ êµ¬ë§¤ ë§Œì¡±ë„ ê°’ì„ ê¸°ì¡´ êµ¬ë§¤ ë§Œì¡±ë„ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤. 
+//Parameter : int satisfaction - ë§Œì¡±ë„
+//Author: ì¡°ì€ë¹„
 void Product::addBuySatisfaction(int satisfaction) {
     this->buySatisfaction.push_back(satisfaction);
 }
 
 //Function : void Product::decreaseStockNum()
-//Description: »óÇ° Àç°í¸¦ 1 °¨¼Ò½ÃÅ²´Ù. 
-//Author: Á¶Àººñ
+//Description: ìƒí’ˆ ì¬ê³ ë¥¼ 1 ê°ì†Œì‹œí‚¨ë‹¤. 
+//Author: ì¡°ì€ë¹„
 void Product::decreaseStockNum() {
     this->stockNum--;
 }
 
 //Function : Product* ProductCollection::getProduct(unsigned int order)
-//Description: »óÇ° ¸®½ºÆ®¿¡¼­ ÀÎÀÚ·Î ¹ŞÀº ÇØ´ç ¼ø¼­ÀÇ »óÇ°À» °¡¸®Å°´Â Æ÷ÀÎÅÍ¸¦ ¹İÈ¯ÇÑ´Ù. ÇØ´ç ¼ø¼­¿¡¼­ ¹İÈ¯ÇÒ °Ô ¾øÀ¸¸é 0(null)À» ¹İÈ¯ÇÑ´Ù.
-//Parameter : unsigned int order - index ¼ø¼­
+//Description: ìƒí’ˆ ë¦¬ìŠ¤íŠ¸ì—ì„œ ì¸ìë¡œ ë°›ì€ í•´ë‹¹ ìˆœì„œì˜ ìƒí’ˆì„ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„°ë¥¼ ë°˜í™˜í•œë‹¤. í•´ë‹¹ ìˆœì„œì—ì„œ ë°˜í™˜í•  ê²Œ ì—†ìœ¼ë©´ 0(null)ì„ ë°˜í™˜í•œë‹¤.
+//Parameter : unsigned int order - index ìˆœì„œ
 //Return Value : Product*
-//Author: Á¶Àººñ
+//Author: ì¡°ì€ë¹„
 Product* ProductCollection::getProduct(unsigned int order) {
     if (order < this->product.size()) {
         return this->product[order];
@@ -1383,16 +1385,16 @@ Product* ProductCollection::getProduct(unsigned int order) {
     else return 0;
 }
 
-//»óÇ° ¸®½ºÆ®¿¡ »óÇ° Ãß°¡
+//ìƒí’ˆ ë¦¬ìŠ¤íŠ¸ì— ìƒí’ˆ ì¶”ê°€
 /*void ProductCollection::addProduct(Product* product) {
     this->product.push_back(product);
 }*/
 
 //Function : Product* ProductCollection::findProduct(string name)
-//Description: »óÇ° ¸®½ºÆ®¿¡¼­ ÀÎÀÚ·Î ¹ŞÀº »óÇ°¸í°ú ÀÏÄ¡ÇÏ´Â ÀÌ¸§À» °¡Áø »óÇ°À» Ã£´Â´Ù. Ã£À¸¸é ÇØ´ç »óÇ°À» °¡¸®Å°´Â Æ÷ÀÎÅÍ¸¦ ¹İÈ¯ÇÏ°í ¾øÀ¸¸é 0(null)À» ¹İÈ¯ÇÑ´Ù.
-//Parameter : string name - »óÇ°¸í
+//Description: ìƒí’ˆ ë¦¬ìŠ¤íŠ¸ì—ì„œ ì¸ìë¡œ ë°›ì€ ìƒí’ˆëª…ê³¼ ì¼ì¹˜í•˜ëŠ” ì´ë¦„ì„ ê°€ì§„ ìƒí’ˆì„ ì°¾ëŠ”ë‹¤. ì°¾ìœ¼ë©´ í•´ë‹¹ ìƒí’ˆì„ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„°ë¥¼ ë°˜í™˜í•˜ê³  ì—†ìœ¼ë©´ 0(null)ì„ ë°˜í™˜í•œë‹¤.
+//Parameter : string name - ìƒí’ˆëª…
 //Return Value : Product*
-//Author: Á¶Àººñ
+//Author: ì¡°ì€ë¹„
 Product* ProductCollection::findProduct(string name) {
     unsigned int i = 0;
     while (i < this->product.size()) {
